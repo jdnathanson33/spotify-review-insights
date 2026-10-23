@@ -1,0 +1,13 @@
+.env
+.env.*
+!.env.example
+data/spotify_reviews_18months.csv
+local/
+__pycache__/
+*.pyc
+state/*/state.sqlite*
+cost/pilot_state/state.sqlite*
+evals/injection_state/state.sqlite*
+evals/mock_state/
+node_modules/
+.vercel/
