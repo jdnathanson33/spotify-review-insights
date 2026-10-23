@@ -24,7 +24,7 @@ main{max-width:1180px;margin:0 auto;padding:8px 16px 48px;display:grid;gap:16px}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
 .tile{background:var(--surface-1);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
 .tile .v{font-size:28px;font-weight:650;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
-.tile .k{color:var(--text-secondary);font-size:13px}.tile .d{color:var(--text-muted);font-size:12px}
+.tile .k{color:var(--text-secondary);font-size:13px}.tile .v.txt{font-size:17px;line-height:1.3;letter-spacing:0}.tile .d{color:var(--text-muted);font-size:12px}
 .grid2{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:16px}
 @media (max-width:860px){.grid2{grid-template-columns:1fr}}
 .rec-head{font-size:19px;font-weight:600;margin:4px 0 10px}
@@ -76,7 +76,7 @@ footer{max-width:1180px;margin:0 auto;padding:0 16px 32px;color:var(--text-muted
   <section class="grid2">
     <div class="card">
       <h2>Priority by product area</h2>
-      <p class="note">Σ severity of complaint &amp; cancellation reviews (= priority score summed over each area's issues)</p>
+      <p class="note">Σ severity of complaint &amp; cancellation reviews per area (usability includes catalog; playback includes downloads; "none" = generic criticism, boycotts, unclear — not actionable)</p>
       <div id="areaChart"></div>
     </div>
     <div class="card">
@@ -125,11 +125,11 @@ const api=p=>fetch("/api/"+p).then(r=>{if(!r.ok)throw new Error(p+": "+r.status)
 const tip=$("#tip");
 function showTip(e,html){tip.innerHTML=html;tip.style.display="block";const x=Math.min(e.clientX+14,innerWidth-tip.offsetWidth-8),y=Math.min(e.clientY+14,innerHeight-tip.offsetHeight-8);tip.style.left=x+"px";tip.style.top=y+"px"}
 function hideTip(){tip.style.display="none"}
-function svgEl(w,h){const s=document.createElementNS("http://www.w3.org/2000/svg","svg");s.setAttribute("viewBox",`0 0 ${w} ${h}`);s.setAttribute("width","100%");s.style.display="block";return s}
+function svgEl(w,h){const s=document.createElementNS("http://www.w3.org/2000/svg","svg");s.setAttribute("viewBox",`0 0 ${w} ${h}`);s.setAttribute("width",w);s.setAttribute("height",h);s.style.display="block";s.style.maxWidth="100%";return s}
 function add(p,tag,attrs,text){const e=document.createElementNS("http://www.w3.org/2000/svg",tag);for(const k in attrs)e.setAttribute(k,attrs[k]);if(text!=null)e.textContent=text;p.appendChild(e);return e}
 // Horizontal bar chart: rounded data-end, 2px gap between bars, value labels in text ink, hover tooltip
 function hbars(el,rows,{label,value,color,tipHtml,onClick,labelW=190}){
-  const W=el.clientWidth||600,bh=22,gap=8,h=rows.length*(bh+gap)+4,max=Math.max(...rows.map(value))||1,plotW=W-labelW-70;
+  const W=Math.max(320,el.getBoundingClientRect().width||600),bh=22,gap=8,h=rows.length*(bh+gap)+4,max=Math.max(...rows.map(value))||1,plotW=W-labelW-70;
   const s=svgEl(W,h);
   rows.forEach((r,i)=>{const y=i*(bh+gap)+2,w=Math.max(2,plotW*value(r)/max);
     add(s,"text",{x:labelW-8,y:y+bh/2+4,"text-anchor":"end"},label(r).length>28?label(r).slice(0,27)+"…":label(r));
@@ -141,7 +141,7 @@ function hbars(el,rows,{label,value,color,tipHtml,onClick,labelW=190}){
     if(onClick)hit.addEventListener("click",()=>onClick(r));});
   el.innerHTML="";el.appendChild(s)}
 function lineChart(el,months,series){
-  const W=el.clientWidth||520,H=240,L=40,R=12,T=10,B=28,pw=W-L-R,ph=H-T-B;
+  const W=Math.max(300,el.getBoundingClientRect().width||520),H=240,L=40,R=12,T=10,B=28,pw=W-L-R,ph=H-T-B;
   const max=Math.max(.05,...series.flatMap(s=>s.values.map(v=>v??0)));const yMax=Math.ceil(max*20)/20;
   const s=svgEl(W,H);const x=i=>L+pw*i/(months.length-1||1),y=v=>T+ph*(1-v/yMax);
   for(let k=0;k<=4;k++){const v=yMax*k/4;add(s,"line",{x1:L,x2:W-R,y1:y(v),y2:y(v),stroke:"var(--grid)"});add(s,"text",{x:L-6,y:y(v)+4,"text-anchor":"end"},Math.round(v*100)+"%")}
@@ -176,7 +176,7 @@ function renderTiles(ov,rank){
   const t=[["Reviews accounted for",fmt(tot),"of 660,622 source IDs"],["Classified (completed)",fmt(st.completed||0),((st.completed||0)/660609*100).toFixed(2)+"% of 660,609 nonempty"],
    ["Quarantined",fmt(st.quarantined||0),"incl. 13 empty texts"],["Complaint & cancellation",fmt(cmp),"members of "+rank.length+" ranked issues"],
    ["Top issue",rank[0]?.name||"—","priority "+fmt(rank[0]?.priority_score||0)],["API spend (all runs)",cost.total_usd!=null?"$"+Number(cost.total_usd).toFixed(2):"—",cost.note||"from saved call log"]];
-  $("#tiles").innerHTML=t.map(([k,v,d])=>`<div class="tile"><div class="k">${esc(k)}</div><div class="v">${esc(v)}</div><div class="d">${esc(d)}</div></div>`).join("")}
+  $("#tiles").innerHTML=t.map(([k,v,d])=>`<div class="tile"><div class="k">${esc(k)}</div><div class="v${/^[$\d,.—]+$/.test(v)?"":" txt"}">${esc(v)}</div><div class="d">${esc(d)}</div></div>`).join("")}
 function renderRec(r){
   if(!r||!r.headline){$("#recBody").textContent="No recommendation stored.";return}
   const claims=Object.fromEntries((r.claims||[]).map(c=>[c.claim_id,c]));const b=r.body||{};
@@ -190,7 +190,7 @@ function renderRec(r){
 function renderAreas(ov,rank){
   const by={};rank.forEach(r=>{const a=by[r.area]||(by[r.area]={area:r.area,sev:0,n:0,c:0});a.sev+=r.severity_sum;a.n+=r.complaint_count;a.c+=r.cancellation_count});
   const rows=Object.values(by).sort((a,b)=>b.sev-a.sev);
-  hbars($("#areaChart"),rows,{label:r=>r.area,value:r=>r.sev,color:r=>"var(--seq)",labelW:120,
+  hbars($("#areaChart"),rows,{label:r=>r.area==="none"?"none (generic/unclear)":r.area,value:r=>r.sev,color:r=>r.area==="none"?"var(--text-muted)":"var(--seq)",labelW:150,
     tipHtml:r=>`<b>${esc(r.area)}</b><br>Σ severity ${fmt(r.sev)}<br>${fmt(r.n)} complaint/cancellation reviews<br>${fmt(r.c)} with cancellation intent`})}
 function renderRank(rank){
   const top=rank.slice(0,15);const areas=AREA_ORDER.filter(a=>top.some(r=>r.area===a));
@@ -220,7 +220,7 @@ function renderQuality(ov){
    ["Label config",`<span class="mono">${esc((ov.run_summary||{}).label_config||"")}</span>`]];
   $("#quality").innerHTML=`<table class="data"><tbody>${rows.map(([k,v])=>`<tr><td style="width:220px;color:var(--text-secondary)">${k}</td><td>${v}</td></tr>`).join("")}</tbody></table>`}
 init();
-addEventListener("resize",()=>{clearTimeout(window._r);window._r=setTimeout(()=>{if(ISSUES.length){renderRank(ISSUES)}},200)});
+addEventListener("resize",()=>{clearTimeout(window._r);window._r=setTimeout(()=>{if(ISSUES.length){renderRank(ISSUES);renderAreas(null,ISSUES)}},200)});
 </script>
 </body>
 </html>

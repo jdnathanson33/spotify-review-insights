@@ -30,14 +30,14 @@
  "reported_output_tokens": 34399081,
  "audit_script_sha256": "d60bd66d84922d934c65b3d42b2c7d36cc738e8c75e2d6f2b2f58bca3141c26d",
  "input_files_sha256": {
-  "calls.jsonl.gz": "57787a702e67ae2091d2e95a697f3bc14b240d02e1abe7900c6946f3ec4f192f",
+  "calls.jsonl.gz": "088506af78cdbb7477fe1f0754289e1f3997a7d9cbaed3e1c744f4b42c34dd38",
   "checkpoint_after.json": "38a22f245be70d925fd9db2958f65e88e8fcf5f3876608e427c27e65f65d0069",
   "checkpoint_before.json": "913f751f3a1498ca78550339d04d12661731d02c066398fa206df20c7c66ef2e",
   "claims.csv": "39a1a2ac725a374cc2c8f8387c1c758494e258e564263028ce9c887580f54328",
   "ingestion.json": "5512dd793b0bde3bd51f28b20b440108f3c9bab31233819bea5f32ce19482153",
   "membership.csv": "95cd09d8e8b1970881cd2e018feb646e7ae150dfb8bb77e74c74771229bd12ce",
   "ranking.csv": "4ea1025aacf98a286465d1ae83d6aaad5a85b265f7f669c0ebafa25d7363d6c4",
-  "records.jsonl.gz": "206293a2ba0461051c318c56d51588e146973d93a9b4ca640ec9251be90f6ced",
+  "records.jsonl.gz": "51d99ed0814c6957b54ddfffbca4a036ca08c7a1f425e55d8e47cd4da1dec12b",
   "run.json": "09bf8e059a1517c9fd5d01d2ab9f43731b5c8f0f9d51da89daa40288a574645e"
  },
  "limits": [

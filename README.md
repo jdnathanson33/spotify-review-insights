@@ -5,7 +5,7 @@
 
 | | |
 |---|---|
-| **Live dashboard** | **https://spotify-review-insights.vercel.app**. Public, no login. Backend: Vercel serverless API → Neon Postgres. |
+| **Live dashboard** | **https://spotify-review-insights-gamma.vercel.app**. Public, no login. Backend: Vercel serverless API → Neon Postgres. |
 | Grading export | [`grading/`](grading/) (contract `a5-audit-v1`). The self-check result is in [`evals/self_check_summary.json`](evals/self_check_summary.json). |
 | Cost calculator | [`cost/report.md`](cost/report.md) (measured cold/warm 100-review pilot plus projections). Offline replay: `python cost/calculator.py` |
 | Architecture | [`docs/architecture.md`](docs/architecture.md) (diagram, code/model boundaries) |
@@ -20,8 +20,8 @@
 | Quarantined | **86** = 13 `empty_review_text` + 73 `invalid_model_output_after_retry` (no exact-substring evidence quote after retry and requeue). 0 pending. |
 | Exact-text cache reuse | 484,189 distinct nonempty texts were sent to the model. **176,420** rows reuse a direct `cache_source_id`. |
 | Self-check (zero-API checker) | `working_coverage_point_candidate` **0.9999**. The only flag is `unfinished_classification` (the 73 quarantines above, shown on purpose). |
-| Model calls | 10,457 logged attempts (enrich, verify, group and memo roles). 54.1M input and 34.4M output tokens. |
-| **API spend** | **$10.85** for the full run including dev checkpoints ([`cost/scaling.md`](cost/scaling.md)), plus **$0.13** for the two 100-review pilots and **<$0.01** for injection and smoke tests. The budget cap was $40, enforced in code. |
+| Model calls | 10,457 logged attempts (deduplicated) (enrich, verify, group and memo roles). 54.1M input and 34.4M output tokens. |
+| **API spend** | **$10.94** for the full run including dev checkpoints ([`cost/scaling.md`](cost/scaling.md)), plus **$0.13** for the two 100-review pilots and **<$0.01** for injection and smoke tests. The budget cap was $40, enforced in code. |
 | Full-run elapsed time | About 41 minutes from the start of full-corpus enrichment to the final memo (sync interrupt/resume demo, then the Message Batches API for the bulk, then deferred retries and downstream stages) |
 | Golden 50 (see the disclosure below) | topic **82%**, intent **86%**, severity exact **88%**, severity MAE **0.16**, sentiment MAE 0.126, joint 70%. 16 of 50 cases are marked ambiguous. |
 | Independent verifier (seeded 1% sample, n=4,841) | topic **84.3%**, intent **91.0%**, severity **88.8%** agreement, severity MAE 0.115. 1,400 disagreement rows are saved. |
@@ -99,7 +99,7 @@ See [`docs/architecture.md`](docs/architecture.md) for the full Mermaid diagram.
 **Working result (3)**
 1. *Full ingestion, coverage, classification.* [`grading/ingestion.json`](grading/ingestion.json) (official helper) and [`state/main/out/`](state/main/out/) `ingestion_report_1fc85de68a30.json`. Coverage: 660,622 accounted for, 660,536 completed, 86 quarantined.
 2. *Runnable staged program, bounded calls, saved handoffs, demonstrated resume.* `pipeline/` (≤50 reviews per enrich request, validated by the checker's `unbounded_batch` test). Handoffs are the `state.sqlite` tables plus `state/main/out/*`. Resume evidence: [`grading/checkpoint_before.json`](grading/checkpoint_before.json), [`grading/checkpoint_after.json`](grading/checkpoint_after.json), [`evals/resume_check.json`](evals/resume_check.json), and the recording [`evals/resume_demo.cast`](evals/resume_demo.cast) (play with `asciinema play`, or read [`evals/resume_demo.log`](evals/resume_demo.log)).
-3. *Reproducible ranking + deployed dashboard with grounded AI recommendations.* `python scripts/rerank_from_grading.py` reproduces [`grading/ranking.csv`](grading/ranking.csv) byte-for-byte with no model call. Dashboard: **https://spotify-review-insights.vercel.app** ([`dashboard/`](dashboard/)). Static page → `/api/*` serverless functions → Neon Postgres (`dashboard/schema.sql`, loaded by `dashboard/load_db.py` from committed artifacts). It shows overall metrics, area priority, the issue ranking, a monthly trend, the AI recommendation with clickable claim chips and validation status, per-issue evidence reviews, and a review-ID trace box.
+3. *Reproducible ranking + deployed dashboard with grounded AI recommendations.* `python scripts/rerank_from_grading.py` reproduces [`grading/ranking.csv`](grading/ranking.csv) byte-for-byte with no model call. Dashboard: **https://spotify-review-insights-gamma.vercel.app** ([`dashboard/`](dashboard/)). Static page → `/api/*` serverless functions → Neon Postgres (`dashboard/schema.sql`, loaded by `dashboard/load_db.py` from committed artifacts). It shows overall metrics, area priority, the issue ranking, a monthly trend, the AI recommendation with clickable claim chips and validation status, per-issue evidence reviews, and a review-ID trace box.
 
 ## One review, end to end
 
