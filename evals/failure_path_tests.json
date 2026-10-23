@@ -1,0 +1,48 @@
+{
+  "provider": "mock (deterministic, offline)",
+  "results": {
+    "temporary_api_failure": {
+      "env": {
+        "MOCK_TRANSIENT_FAILS": "2"
+      },
+      "attempts": 4,
+      "failed_attempts": 2,
+      "invalid_item_retry_calls": 0,
+      "final_status_counts": {
+        "completed": 100
+      },
+      "all_100_accounted": true
+    },
+    "malformed_output": {
+      "env": {
+        "MOCK_MALFORMED_EVERY": "2"
+      },
+      "attempts": 3,
+      "failed_attempts": 0,
+      "invalid_item_retry_calls": 1,
+      "final_status_counts": {
+        "completed": 100
+      },
+      "all_100_accounted": true
+    },
+    "dropped_ids": {
+      "env": {
+        "MOCK_DROP_EVERY": "1"
+      },
+      "attempts": 4,
+      "failed_attempts": 0,
+      "invalid_item_retry_calls": 2,
+      "final_status_counts": {
+        "completed": 98,
+        "quarantined": 2
+      },
+      "all_100_accounted": true
+    },
+    "interrupt_resume": {
+      "completed_before": 150,
+      "completed_after": 479,
+      "resent_completed_ids": 0,
+      "passed": true
+    }
+  }
+}

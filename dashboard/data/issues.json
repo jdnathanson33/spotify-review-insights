@@ -1,0 +1,880 @@
+{
+  "access.account_lost_or_hacked": {
+    "misfit_ids": [
+      "8ea0db48-e0fa-45c0-9574-d1c85e272b20"
+    ],
+    "name": "Accounts reset, hacked, or losing saved data",
+    "request_id": "msg_011CgJKNjDMRErSem2jN9DoK",
+    "sample_ids": [
+      "1d0981ca-43ed-473a-9dbc-5723554a4cb6",
+      "3c30d5fc-5063-44b6-a6f2-02bbcd8d66f5",
+      "4e3a58be-6219-4fe1-9938-89615427109d",
+      "5b97e1be-2c6e-4012-8a1c-4ed85ea8b2db",
+      "700ee9df-36ab-430e-9c10-1134e35897c0",
+      "74b72c10-9366-4f5e-915f-a329ffec7128",
+      "8ea0db48-e0fa-45c0-9574-d1c85e272b20",
+      "bde40035-b582-4c82-a1ca-6bc4d16c4256",
+      "c4d3a367-ec99-43a6-8499-ac57ffc52aa2",
+      "c4e9d3c9-c9fd-4811-a75c-f01330eb8304",
+      "d4e8cc7b-2dd6-426a-b1c5-489ddee1acfe",
+      "ff0a15cb-eb10-4592-a444-ffb3767ab807"
+    ],
+    "summary": "Customers report being logged out or hacked, premium status reverting to free, and liked songs, playlists, or history disappearing after switching devices or numbers."
+  },
+  "access.login_failure": {
+    "misfit_ids": [
+      "6afa3be4-b00f-420a-a372-3003f2a21528"
+    ],
+    "name": "Unable to log in to existing account",
+    "request_id": "msg_011CgJKNjDMRErSem2jN9DoK",
+    "sample_ids": [
+      "0646df7e-7220-46ff-84ad-a040a5cd0cf6",
+      "07b8bdbf-376d-4a8b-b9e8-35b3bdf48339",
+      "090c2196-7a36-44d3-8283-258018d261b8",
+      "166c18dd-4e85-48c0-a117-1bfa4b2830bb",
+      "31001377-79f7-4a2f-94da-382a189deee0",
+      "516634c8-deae-4745-92d5-6213048d9cb6",
+      "6a66b3da-aa84-4b0b-8c0e-bb2ad7ac03c4",
+      "6afa3be4-b00f-420a-a372-3003f2a21528",
+      "9835f25c-3ce9-46ef-9d8e-ce72c537921b",
+      "9b4a9c83-00c4-4286-be0e-0e5243750f9f",
+      "b614e965-b9b5-43b0-9b0e-ebb31acfcc8b",
+      "c7790fde-6e9f-4907-9b8e-4adb89fbc044"
+    ],
+    "summary": "Customers repeatedly get login errors, 'something went wrong', or phone-number rejections that prevent them from getting back into accounts they already have."
+  },
+  "access.other": {
+    "misfit_ids": [
+      "83416e98-2d5b-425e-a626-05c30361c264"
+    ],
+    "name": "Miscellaneous access, install, and library problems",
+    "request_id": "msg_011CgJKNjDMRErSem2jN9DoK",
+    "sample_ids": [
+      "0d2e78a4-9121-4f21-806b-f59f8bc9979b",
+      "2980d5b8-30c0-4ba2-a714-7ced8d956a06",
+      "5518de18-5b43-4a42-8b83-c97888979a94",
+      "61b89c0c-1bad-47d8-ac62-175b03431a32",
+      "61be43e1-f0ad-4fe2-bb36-d057a529b492",
+      "6677647d-14ac-4143-b67e-19133263e707",
+      "83416e98-2d5b-425e-a626-05c30361c264",
+      "863bd0d2-32bb-4837-998c-b5ef5fbdb319",
+      "968590ee-bb44-4c05-bc25-0be7a7798362",
+      "a79ab03b-82ae-4515-abde-bf358f66e14f",
+      "ac9d9a49-26c8-4d55-aced-d314525b54e0",
+      "cfabd842-1c5c-4b3b-a12d-8dec3b2cc958"
+    ],
+    "summary": "Customers report assorted access issues such as liked songs not opening, playlists not working, app failing to install or launch, and difficulty switching accounts or countries."
+  },
+  "access.signup_verification": {
+    "misfit_ids": [],
+    "name": "Sign-up and verification codes failing",
+    "request_id": "msg_011CgJKNjDMRErSem2jN9DoK",
+    "sample_ids": [
+      "433d4ebb-816a-4566-97dc-f3e69b9f5240",
+      "704241d6-a2f1-4f21-88fb-f1a530b08499",
+      "727251f2-ea88-4e77-b33f-cde0093e7233",
+      "8c55827f-c631-4cf0-a5c9-525736ca24a3",
+      "8fcbf961-2d24-4f76-8ce2-34d6a1372af9",
+      "a81ecc14-fc2f-4083-8a9f-6544177b7aec",
+      "a86306dc-4bb9-4d43-a5e2-aca9225674b0",
+      "c39f20c9-31e1-46f3-835d-8679990788d7",
+      "cf791e24-2c68-4729-a7c9-7eb52be962ab",
+      "f97572d8-593d-4abd-830b-66c2e5b82f41",
+      "fc84a4a2-c4cb-488d-a574-bbac8b96b81d",
+      "fccd8706-857e-44fe-8876-977022486ffc"
+    ],
+    "summary": "Customers cannot create accounts because verification codes never arrive, phone numbers or emails are rejected, or sign-up shows generic errors or offline messages."
+  },
+  "billing.other": {
+    "misfit_ids": [
+      "52f92195-fc76-4c55-8ec3-d756bee15014"
+    ],
+    "name": "General premium pricing and paywall complaints",
+    "request_id": "msg_011CgJKNjDMRErSem2jN9DoK",
+    "sample_ids": [
+      "0f1d7211-cd8d-4264-a433-2a5511bba7a1",
+      "26e8f29f-26d4-415a-80d6-3c2e53754828",
+      "4df456ac-9ef1-4c6f-a1d4-bbd0e836ee21",
+      "52f92195-fc76-4c55-8ec3-d756bee15014",
+      "5adecd92-5602-49d0-97ca-d938d15cd2c7",
+      "af09efbc-063d-42cf-9ccf-9b8f0933fac6",
+      "afc9e11f-bd6b-48f4-89d4-7417477ae46f",
+      "b6fbb662-bab8-429b-9205-c6567316522c",
+      "bd9aa07e-224d-4ea7-be14-1cf31b6b499b",
+      "e4e0ae47-0a96-4dd9-82e7-91cec7a6bf08",
+      "ee72ac22-f83b-4c44-a163-9a3332c2a2c0",
+      "f2a05fca-bd8a-47e9-87f3-4a114bcde2e8"
+    ],
+    "summary": "Customers complain that Spotify is money-focused, pushes premium and forced ads while paying, and that purchases such as songs or audiobooks fail to work."
+  },
+  "billing.payment_methods": {
+    "misfit_ids": [
+      "08ed6fe1-f5f5-4d0d-a853-3d17bb76eb14"
+    ],
+    "name": "Payment methods declined or failing at checkout",
+    "request_id": "msg_011CgJKNjDMRErSem2jN9DoK",
+    "sample_ids": [
+      "04b4fb47-e6cf-41db-8814-d27219f120a3",
+      "08ed6fe1-f5f5-4d0d-a853-3d17bb76eb14",
+      "19b128f8-c1bd-40e7-aa59-4ea0a7b6222e",
+      "1c0b3fb8-4284-4beb-b3c6-f17be1719700",
+      "209182bb-b7fa-41c4-84b6-ad14cfbee11b",
+      "2fbb1521-cd78-466d-b8ef-93c4af3e7bcf",
+      "3a010d7f-0292-49aa-bda6-b72e84d2d95d",
+      "4265881e-caf9-4426-8644-2a36a97c3376",
+      "96ba5579-4723-4238-bea1-d6a576121a88",
+      "ca3d4702-b4d4-4d33-939d-bafc82ebc74a",
+      "daf0d276-0128-44c2-8dc7-46a127e4cc90",
+      "f1cf9604-ac16-4777-96fc-8b13fb60a3ae"
+    ],
+    "summary": "Customers report cards, mobile-load, and carrier payment options being declined, errors during purchase, and no retry option when paying for premium plans."
+  },
+  "billing.premium_only_controls": {
+    "misfit_ids": [
+      "9d141646-a78a-44fc-8561-6ec6b56c5327"
+    ],
+    "name": "Free tier features locked behind Premium",
+    "request_id": "msg_011CgJKNz733R6GgtNJSWU1f",
+    "sample_ids": [
+      "19a34b04-b43b-4db0-8da5-502fcc4c4f21",
+      "2da99ed7-6362-49f9-937b-74282eb51526",
+      "3c93dfa0-b3f5-40c6-9b9c-bce6b87146f8",
+      "4a695a5f-91c6-4125-9e18-c04acd28fde3",
+      "57287e62-ed0d-4217-bf12-66804e49ee41",
+      "5e80e0a1-eefd-451c-86ba-246f51610234",
+      "8fa21928-eacb-4e27-ae48-eeeaa759b939",
+      "9d141646-a78a-44fc-8561-6ec6b56c5327",
+      "a8410b8f-6e62-4990-ab1f-1626a9a2031b",
+      "ac18d1f2-8261-4c41-b226-5d7339aa5493",
+      "bec51468-f8ba-41e2-a845-ad821e8fbfed",
+      "c43006ae-311a-4f80-9e2c-30f20f82a54e"
+    ],
+    "summary": "Free users report being unable to replay, seek, select, or queue songs, skip freely, or view lyrics without paying for Premium."
+  },
+  "billing.price_too_high": {
+    "misfit_ids": [],
+    "name": "Premium pricing seen as too expensive",
+    "request_id": "msg_011CgJKNz733R6GgtNJSWU1f",
+    "sample_ids": [
+      "0f9c5b27-438d-4a31-8f4e-5cf9753b74d2",
+      "3b50c943-725a-4102-aa20-9639cea384e6",
+      "48f9c79d-caea-4f7f-942d-29ae50b14327",
+      "5b21c57b-1389-43a0-81ec-479280f84130",
+      "5e55cd9a-e184-46d3-a275-b5842eb5dacd",
+      "61542009-f08e-49cb-ae64-66d277332917",
+      "67075cf7-23e9-4984-b409-c16ece70f2db",
+      "84e9ad8b-5b02-4ac7-a80e-d0f99b751ea7",
+      "85f5caac-6f3d-4bc0-bc95-abba8f46259c",
+      "997a2363-3738-485b-83cc-237f2bbc0e13",
+      "ad6e70d9-3fcf-42ca-a1c4-012d6f7b974d",
+      "c83fb6a2-c0a7-45ae-8136-ed8d451d40d9"
+    ],
+    "summary": "Customers say Premium costs too much, keeps rising, and that the app feels greedy about money and ads."
+  },
+  "billing.subscription_entitlement": {
+    "misfit_ids": [
+      "931ff929-a38c-481d-b451-3528d0b9eeda"
+    ],
+    "name": "Premium purchase or benefits not applying",
+    "request_id": "msg_011CgJKNz733R6GgtNJSWU1f",
+    "sample_ids": [
+      "03438b7d-86c4-49bc-be64-36c9fc4a2f85",
+      "223198fb-7ac7-4b48-a48c-4c249cd081ed",
+      "2407a159-b849-4027-be49-e0bca5181574",
+      "373bdd2d-4407-4c46-a7cf-d0eeae4ed58a",
+      "3ba0ede4-e965-45c7-96a6-b482cc6b4df6",
+      "931ff929-a38c-481d-b451-3528d0b9eeda",
+      "9ba0a95b-832f-411d-8468-30120958bc8c",
+      "a1b77bc0-f5ea-4e76-a418-35cf96c10043",
+      "c428e165-6cfb-4d22-b34f-90e41525c585",
+      "cb15b965-0c85-4752-85e0-5fb2b082c9c0",
+      "f5c599ff-d6b1-45ac-a6af-f57bf68f6f42",
+      "fbad17c3-4f44-4e44-a334-2cf7dae27939"
+    ],
+    "summary": "Subscribers report paying for Premium but not receiving it, losing benefits over time, or being unable to purchase or reactivate a plan."
+  },
+  "billing.unexpected_charges_refunds": {
+    "misfit_ids": [
+      "c99358c9-3e33-434b-8f72-387958b620b6"
+    ],
+    "name": "Unauthorized or duplicate subscription charges",
+    "request_id": "msg_011CgJKNz733R6GgtNJSWU1f",
+    "sample_ids": [
+      "09053d2f-ba5b-44f6-acf3-8cca3ccd318a",
+      "1d8c7672-bf76-4ec7-891e-be76af29a645",
+      "25289e56-0fea-42bb-9b9f-2ab2ee941846",
+      "26152972-e26b-4c78-b1af-2b9ac8911f2d",
+      "5b1e8a3e-d674-46fb-98c7-8f6946496956",
+      "72d106c0-be28-4fc2-8b94-09c34fe01464",
+      "8473d235-b284-429c-ab7a-d22ca52006dc",
+      "8e67891b-c251-49ad-9a41-f25c198c853a",
+      "c99358c9-3e33-434b-8f72-387958b620b6",
+      "e7349301-e220-4598-819d-988821e7efc2",
+      "f55a14bf-8741-41b0-bf38-92e40cdaa2d3",
+      "fe4205d1-d0a3-49e8-a697-d272ed2296aa"
+    ],
+    "summary": "Users say their cards or accounts were charged for Premium they never ordered, charged repeatedly, or charged after cancelling, with no easy way to stop it."
+  },
+  "catalog.lyrics_availability": {
+    "misfit_ids": [],
+    "name": "Lyrics fail to load or are missing",
+    "request_id": "msg_011CgJKNz733R6GgtNJSWU1f",
+    "sample_ids": [
+      "41b07743-4681-4f67-bd1e-62240a6dd50b",
+      "551f49e2-d808-4593-bedb-54f03691388d",
+      "5f7e4a49-0393-4593-8f19-8b13a718bc04",
+      "60411b96-a758-4397-a014-e64e424bcdf5",
+      "9573e9ef-5320-4c6e-ae4f-b0f5d88d5ebd",
+      "9a6de29d-bc7d-4a40-bfc2-3a7d2d98cc4b",
+      "b1adc017-688f-405c-941f-82c4c9835a74",
+      "b571659a-6acb-4f42-8545-5801cf7fd822",
+      "e2bf5635-8af4-4670-b18b-c761f9a2aeac",
+      "e7e6d6e3-77f6-4334-ac9a-a9d57bd63ff7",
+      "f1d6e2f5-d2dd-40b6-bbf9-59ceeb2fe676",
+      "ff9712d2-7c8b-45ad-8fc1-67b77a1a73d0"
+    ],
+    "summary": "Customers report lyrics not appearing or loading for many songs, including popular artists, after recent updates."
+  },
+  "catalog.missing_content": {
+    "misfit_ids": [],
+    "name": "Songs and artists removed or unavailable",
+    "request_id": "msg_011CgJKNz733R6GgtNJSWU1f",
+    "sample_ids": [
+      "324a2bd3-9c6f-4564-aeed-2791774df008",
+      "35026fed-a4e8-43e3-8100-15dd90874d4a",
+      "3ac61a66-1c33-4097-95d1-8b1e395bba33",
+      "3f2e4ad4-a760-4b26-ba3d-169782230ee1",
+      "50957416-659a-4783-9a11-6b072ce904f2",
+      "8dd54a8c-08c2-4164-bede-c3fde62d77f9",
+      "933e0dd2-501e-4ae3-bff2-1b72aba94607",
+      "953964c8-0138-4b69-9d0d-30807e5f9802",
+      "ccb046d8-9d01-4171-abe4-39488374ec15",
+      "ceb79464-c0cc-40d8-84e9-14274a21f7fd",
+      "f0b019ec-266f-4acc-b23e-178f2d8c0bee",
+      "ffc61689-2952-4e33-af3c-3971fe47e47e"
+    ],
+    "summary": "Users say favorite songs, artists, and playlists are missing, greyed out, or removed from the catalog, sometimes only playing previews."
+  },
+  "catalog.other": {
+    "misfit_ids": [
+      "9116428e-25c6-4072-8d20-e0a88a1da383",
+      "7d0868f8-ed7d-429a-afad-4d17e45a66b3",
+      "c3841d8b-2e11-4c78-a118-4a1a2131ffaf",
+      "a08628b4-0f53-4b37-9be3-a3bed3c10214",
+      "112f449d-26de-4472-a660-b56ae6d8e3e5",
+      "02a73433-a766-4185-bba3-59f97ceb535b"
+    ],
+    "name": "Miscellaneous catalog and playback problems",
+    "request_id": "msg_011CgJKPJHRgmAhQbmBmABsm",
+    "sample_ids": [
+      "02a73433-a766-4185-bba3-59f97ceb535b",
+      "072dd55e-7ad9-4067-88f8-05bb140a0fc4",
+      "0ae84ae9-7d77-4570-8832-bfb88144042f",
+      "112f449d-26de-4472-a660-b56ae6d8e3e5",
+      "20e8f5f1-a2b4-41ad-97d0-8dd3990dffb2",
+      "345a7875-cb28-4127-98b7-bf91dede97ac",
+      "7d0868f8-ed7d-429a-afad-4d17e45a66b3",
+      "9116428e-25c6-4072-8d20-e0a88a1da383",
+      "a08628b4-0f53-4b37-9be3-a3bed3c10214",
+      "a8f95269-04d5-4ab6-a5cf-bf8aa82cb734",
+      "b374f403-aa2b-45b2-8ede-8e49cd3af4f6",
+      "c3841d8b-2e11-4c78-a118-4a1a2131ffaf"
+    ],
+    "summary": "Customers report a mix of unrelated catalog issues, including wrong artist pages opening, unwanted content such as news shows or local files appearing, language mismatches, and playback that stops working."
+  },
+  "catalog.podcasts_audiobooks": {
+    "misfit_ids": [
+      "ef69ded4-6729-4be3-ac74-06dda859d70f"
+    ],
+    "name": "Podcast and audiobook playback and availability",
+    "request_id": "msg_011CgJKPJHRgmAhQbmBmABsm",
+    "sample_ids": [
+      "044592d4-ac91-4901-94eb-88983d840c8e",
+      "10e4a486-b388-4310-b2bf-70f85ed150bd",
+      "12baa9bd-0ff2-473f-a914-cd8c7c371cc8",
+      "1502a8ea-3f71-438d-9834-fbcb3bf7f33c",
+      "25897b77-c8e6-4faf-974a-e7704739d82c",
+      "a3f8124d-0511-47f9-a503-ed6280a6a0c8",
+      "c5db1335-ffb4-4224-a77f-cd98817e4156",
+      "c873d707-20e0-412e-ab75-1d743572eea7",
+      "cc78f5e9-4514-44b0-b60d-c85b2308c98d",
+      "dcf335d3-8da1-48fa-9dd9-67be6b03b615",
+      "ef69ded4-6729-4be3-ac74-06dda859d70f",
+      "fe5160ae-a52d-4a65-a016-28e39fe1ba9a"
+    ],
+    "summary": "Customers say podcasts and audiobooks disappear from their library, cannot be played, lack full episode access or proper notifications, and are shown with unwanted ads."
+  },
+  "catalog.recommendations_quality": {
+    "misfit_ids": [
+      "9ec13ad9-bee2-41b5-a14f-cf69028cad1f"
+    ],
+    "name": "Irrelevant recommendations and shuffle behavior",
+    "request_id": "msg_011CgJKPJHRgmAhQbmBmABsm",
+    "sample_ids": [
+      "10739d41-53db-4cdd-ab47-ad5e9270d1e0",
+      "169f55d1-e3d8-4842-98a4-ae80dde8d4aa",
+      "3cfb135b-7097-401d-b6b9-3332ed751326",
+      "4fd5a73b-73af-487c-8796-e3a65dedffff",
+      "726f4315-fea9-45e7-8b83-0e89536debf3",
+      "801ddab3-2684-4c6b-b486-18e27ca017c0",
+      "9ec13ad9-bee2-41b5-a14f-cf69028cad1f",
+      "a25a2a71-428d-4920-869f-9967203b605e",
+      "a4f8f43b-953f-4f02-88dc-d1f0bf49ea2b",
+      "be597515-f5b1-4d80-9afa-d227a2613924",
+      "e878d704-d3bb-4437-8dbd-c492546571a2",
+      "f123613f-2962-4127-bbe9-69b3e08d02bc"
+    ],
+    "summary": "Customers feel the recommendation algorithm, mixes, and shuffle serve songs outside their taste or playlist, often switching genre unexpectedly and repeating the same order."
+  },
+  "catalog.search_discovery": {
+    "misfit_ids": [],
+    "name": "Search returns wrong or unrelated songs",
+    "request_id": "msg_011CgJKPJHRgmAhQbmBmABsm",
+    "sample_ids": [
+      "0b3ae4f4-700f-418e-a7d5-0dbfbaf2db9f",
+      "30894d78-c955-46da-ab00-cce1c78ef7cc",
+      "41fda9cc-fd44-43e4-8053-32b7ddd6c3fb",
+      "72a18a3f-632f-4349-bf1c-1737de6ac40d",
+      "945498e3-a51f-4cdd-8a9e-ef27e21e5785",
+      "97ce8f90-8620-4020-9994-d46f6fa7cfbf",
+      "d7f9597e-1500-42e3-a99d-da4c61c88c4d",
+      "e258b552-1010-4c47-9ab7-40389542293c",
+      "ed576e85-abcf-4fd5-9c83-14aee6d9f2e2",
+      "ed5b65b1-2e07-413e-bef1-b952f72c966f",
+      "ef19c688-db1b-4662-8b8a-7017796c96da",
+      "f83511a8-4843-4810-a3b5-0996f4ff73f8"
+    ],
+    "summary": "Customers report that searching for a specific song yields a different track than the one selected, that search is slow, and that some playlists or songs are hard to find."
+  },
+  "downloads.download_process": {
+    "misfit_ids": [],
+    "name": "Downloads stall, fail, or are slow",
+    "request_id": "msg_011CgJKPJHRgmAhQbmBmABsm",
+    "sample_ids": [
+      "01685e83-ca66-4ebf-b52d-9e7dd6b06bc9",
+      "0be74180-a888-4c48-90ce-b6058ccab59c",
+      "2f76188e-faeb-468c-94a7-616245f2de6b",
+      "30b02661-72ea-41fc-85b9-e0763c7b0fd5",
+      "49c3de7d-5dae-4be8-907f-d20a38b139fa",
+      "6f92e1b0-7913-42ab-9112-b45dc68039fc",
+      "886e953b-8ec8-4ac3-b114-b2f90d264ea3",
+      "9b1a1c6f-f257-475f-a62d-97411f5a98a4",
+      "9e2a9670-11e7-4777-bc19-d2174ce7867c",
+      "a5e3b456-a14a-4d35-bb8e-2d6e01ccadb1",
+      "dbfbf001-e0d0-4684-bbb9-6feb23dcf749",
+      "eb830d69-8981-415b-a452-e3b262edcd65"
+    ],
+    "summary": "Customers report downloads that never start, take hours, fail on mobile or SD card storage, or cannot be done for individual songs without downloading a whole album or playlist."
+  },
+  "downloads.downloads_disappearing": {
+    "misfit_ids": [],
+    "name": "Downloaded music disappears and must be re-downloaded",
+    "request_id": "msg_011CgJKPJHRgmAhQbmBmABsm",
+    "sample_ids": [
+      "02cd3c21-ca9c-41dc-a40e-cb359f0f3e4e",
+      "0a3202f8-e5b7-4369-9128-648c1863871a",
+      "190d5808-675d-4374-91a7-32191b743579",
+      "258d477a-5aff-480a-a640-dba0d72f2436",
+      "364c3571-9e89-4a1b-986c-7f3274c7080b",
+      "71a13b94-7817-4bb6-9915-7435c0879b18",
+      "7e27864a-832e-4420-96d5-cfd307b2c57e",
+      "918e3508-5680-4240-a92b-418098e78abf",
+      "ad4d48d1-1140-4aa2-a0b9-974bd24ca3d9",
+      "b33592a1-24c0-4114-977d-e589bbfaa1d3",
+      "cc96c048-d541-4b6a-82d2-917577b92700",
+      "d11e6d48-a8cd-4f6d-adef-97dca420c841"
+    ],
+    "summary": "Customers say offline songs and playlists get deleted after updates, restarts, or over days, forcing them to download the music again."
+  },
+  "downloads.offline_playback_failure": {
+    "misfit_ids": [],
+    "name": "Downloaded music fails to play offline",
+    "request_id": "msg_011CgJKPbJsegphMD8h4t5Y4",
+    "sample_ids": [
+      "1656ce41-afe3-4116-b04b-d1f903f48c7d",
+      "28097b2d-0f9c-4ce4-9a5f-1527bae0eb69",
+      "446017df-a0d5-4928-8269-f0130868add7",
+      "5b5afc04-7355-4a2c-94f0-b2ee7cad7f7f",
+      "5c99ede8-320a-459d-a3ad-5e946338251d",
+      "64c44e36-c4c3-43c9-a527-d9403b7a3725",
+      "896b5538-dc68-4d16-9f30-874392e2bc29",
+      "94ffccbd-d272-40b8-8563-1ffa3fbf1d7c",
+      "bbd0b53c-0f70-441c-8a96-69095b72b0e4",
+      "dd03bd77-0894-4967-af50-d5ee8559f6d0",
+      "ed907a74-7a4d-4e94-a2d5-dc9d513e88f4",
+      "edaba474-3f02-46c2-b8b8-045f643cfbd9"
+    ],
+    "summary": "Customers report that downloaded songs and playlists stop working without internet, with offline mode redirecting to a blank app, playback vanishing, or only a few tracks playing."
+  },
+  "downloads.other": {
+    "misfit_ids": [
+      "3fd48d88-8fc0-461e-895d-41bd75e24762",
+      "10630fe2-2755-44e7-9db0-4d69d4959260"
+    ],
+    "name": "Missing or limited download options",
+    "request_id": "msg_011CgJKPbJsegphMD8h4t5Y4",
+    "sample_ids": [
+      "02723209-f4cd-407e-b130-24c22b39e694",
+      "0512d90e-bca5-4238-b78b-a0c02b17944e",
+      "10630fe2-2755-44e7-9db0-4d69d4959260",
+      "197cc500-7485-4de1-9d75-deddb4d7bc7a",
+      "3c278f89-9fd7-4e8b-8875-9079c6fb2ad9",
+      "3fd48d88-8fc0-461e-895d-41bd75e24762",
+      "4a62627c-3ae8-4ee5-b85a-0379692e08ac",
+      "b4bba919-7931-4da4-ba1e-978977bb3353",
+      "b8b6c4e5-bb9f-48fb-aaa4-bb786cd22ba4",
+      "c050a311-ec4a-4359-aa1b-533c78057614",
+      "e97cbe48-bca1-4bad-868a-209ca32b7b0a",
+      "f73c671e-db6b-4238-8973-b2442b0b3a24"
+    ],
+    "summary": "Customers say they cannot download songs or save music locally, lack SD card storage, or cannot easily find and select their downloaded albums and podcasts."
+  },
+  "other.boycott_political": {
+    "misfit_ids": [
+      "e0fbc540-fa08-4d5e-92fd-f24a276165af"
+    ],
+    "name": "Political, religious, and boycott objections",
+    "request_id": "msg_011CgJKPbJsegphMD8h4t5Y4",
+    "sample_ids": [
+      "154e4327-9e66-42b2-ad68-1ce6b338445c",
+      "99e08717-7b0c-4e77-bc84-6847b117da4f",
+      "d1a3a035-044c-4d0b-b17a-f1d8062601af",
+      "de470ff0-a762-4100-a5f1-ce7160bcab8d",
+      "df16baf7-8a04-4411-9aba-10229b642813",
+      "e09f4402-08db-433f-9750-040bc0e8a86a",
+      "e0fbc540-fa08-4d5e-92fd-f24a276165af",
+      "ebf0d6d2-87ee-4ee7-a800-8326338d6a31",
+      "f0ca9fb9-fe47-49fc-ab9c-9efc2324c9de",
+      "f5a9dfde-61a2-4dbf-b158-87c022cf83a0",
+      "f7808e4c-5e64-46e4-9cf9-bc5b30fc7e3e",
+      "fa31858a-ed55-4387-8501-1607238b3a7c"
+    ],
+    "summary": "Customers express boycotts or uninstalls over the company's country of origin, religious objections to music, or perceived political agendas."
+  },
+  "other.generic_criticism": {
+    "misfit_ids": [
+      "01d7be9d-18c6-45cb-ac7a-8535fcc43256"
+    ],
+    "name": "Generic dislike without specific defect",
+    "request_id": "msg_011CgJKPbJsegphMD8h4t5Y4",
+    "sample_ids": [
+      "01d7be9d-18c6-45cb-ac7a-8535fcc43256",
+      "084db7fe-a3e8-4a7e-a332-a95e2041a2cc",
+      "1a16a71c-022c-40d5-84e8-cca7b297b1e4",
+      "2c81f05e-7e74-4bb4-b9c2-882f42d6edff",
+      "4b291328-70e2-4284-ac24-2b14d4dc64ce",
+      "5371052d-9ee1-47c6-8a62-8948be182404",
+      "59b8114f-a710-49af-864f-a1245b8a3fcc",
+      "742eecec-9e9a-4b24-b9ca-9eb2fb9491b0",
+      "75074d64-4ea2-41f8-9a12-c445c25f9e84",
+      "7dd06251-95cd-45f2-a8bb-a9e0958a963d",
+      "8cc1f951-569c-44ec-b777-639f4fbe839e",
+      "b8130adb-cdfa-45a3-8fb0-958272f0f358"
+    ],
+    "summary": "Customers simply call the app bad, worst, garbage, or something to uninstall or ban, without naming any concrete problem."
+  },
+  "other.other": {
+    "misfit_ids": [
+      "e15c849c-9ce7-4a90-8dff-e774054de750"
+    ],
+    "name": "Miscellaneous unrelated feedback",
+    "request_id": "msg_011CgJKPbJsegphMD8h4t5Y4",
+    "sample_ids": [
+      "015c7215-51b8-4e38-a7d9-aa6c6bb19c90",
+      "24d45514-6024-4a9b-bd58-884be3aa530f",
+      "4e32b59d-86ca-483f-8644-7c8ce536253e",
+      "81592898-5147-4e8c-a699-ff360c04299c",
+      "96d30b42-3341-4af5-8da7-8a8eebb00e8a",
+      "a997bcab-dfe4-459a-9403-0e9953eb2712",
+      "aefe87dc-f3e1-4df2-b447-5b4757fe7de3",
+      "c88fe7ab-bd8b-485c-988a-4ce304a44481",
+      "ce9066c9-d6fa-4566-989b-ed65835580df",
+      "d1d0178c-8be8-425f-974c-22785477f99b",
+      "e15c849c-9ce7-4a90-8dff-e774054de750",
+      "f53ca6b2-d359-4cb9-9939-5562781eafa9"
+    ],
+    "summary": "Customers mention assorted topics such as missing Wrapped or following lists, device issues, comparisons to YouTube Music, hidden songs reappearing, and privacy concerns about third-party access."
+  },
+  "other.praise_general": {
+    "misfit_ids": [
+      "c48f9138-c653-415a-8a0d-b729f3fedb31",
+      "64da39c1-522c-4004-aebf-1bf5d9121681"
+    ],
+    "name": "General praise or neutral remarks",
+    "request_id": "msg_011CgJKPbJsegphMD8h4t5Y4",
+    "sample_ids": [
+      "0414cdac-601d-4180-a91a-558f3fabd6d3",
+      "161fb818-67ef-409c-bc76-213f8d6378c2",
+      "3ad16716-c4ce-47b8-b1cd-7edac1f49da5",
+      "64da39c1-522c-4004-aebf-1bf5d9121681",
+      "8663ec01-dfe1-4575-80b4-01154684f85f",
+      "a5ab496d-ce4d-4f61-8762-4c6d0b08c2b9",
+      "c13ba097-bb02-4e92-8c4f-b6cc231ccd41",
+      "c48f9138-c653-415a-8a0d-b729f3fedb31",
+      "c5fb9c0d-53b7-474e-bb6c-57022b9f4343",
+      "d0f3c560-11bd-4d00-9e02-1943652db6f1",
+      "df9dad84-73ea-4eb4-a56a-1d191abec64e",
+      "e89d5490-8bd0-457a-b15d-2019c08dae8b"
+    ],
+    "summary": "Customers give mild or general approval, neutral comments, or feature feedback without describing a specific defect, such as calling the app okay or nice with room for improvement."
+  },
+  "other.unclear_unrelated": {
+    "misfit_ids": [
+      "5508077d-bb68-45e7-a338-2500f1464c2c",
+      "6e6116a9-d44e-4aa9-bd75-4d498070ad19",
+      "b7f3c1e5-cb92-42bd-be04-3ebbfffabbe7",
+      "1586a680-aa5c-44ae-9942-fa1a1f661351",
+      "95179db3-3001-4113-a023-2f18e956b449",
+      "1fcc302e-8866-482e-9d44-258bfd1ea428",
+      "090f731c-aabb-4a49-bafa-8b39f66e2d32"
+    ],
+    "name": "Unclear, off-topic, or uninterpretable reviews",
+    "request_id": "msg_011CgJKPrdrrCkmrrEoddZaD",
+    "sample_ids": [
+      "090f731c-aabb-4a49-bafa-8b39f66e2d32",
+      "1586a680-aa5c-44ae-9942-fa1a1f661351",
+      "1fcc302e-8866-482e-9d44-258bfd1ea428",
+      "395bff43-a664-4d14-856d-84384c79c181",
+      "5508077d-bb68-45e7-a338-2500f1464c2c",
+      "6b56c24f-cb19-4f4e-92b9-a3b21808a109",
+      "6e6116a9-d44e-4aa9-bd75-4d498070ad19",
+      "7197d7ab-45e9-4b0d-ae18-4be7402a6e9c",
+      "9428a3c9-64ee-4ca3-901d-1549c42158f1",
+      "95179db3-3001-4113-a023-2f18e956b449",
+      "9fe063c5-49ad-4f1c-b235-40271632f6b8",
+      "b7f3c1e5-cb92-42bd-be04-3ebbfffabbe7"
+    ],
+    "summary": "Reviews that are nonsensical, unrelated to the app, or written in unclear or non-English text, with no actionable complaint about the product."
+  },
+  "other.update_regression_generic": {
+    "misfit_ids": [
+      "e20fb362-06ef-498f-b306-cacc1eb1e361"
+    ],
+    "name": "Generic complaints that the latest update is bad",
+    "request_id": "msg_011CgJKPrdrrCkmrrEoddZaD",
+    "sample_ids": [
+      "07001a44-7875-4f0f-901a-d389f386c86f",
+      "07876f2e-8cce-4ff0-b9ce-d4dcc50b1a99",
+      "16259a1b-7b88-46df-b79f-11bf7a1772ff",
+      "169c9915-56f6-4c7c-b459-cbc0849d23f3",
+      "2ef54748-1543-414a-b898-c928e8465676",
+      "33171ea0-fbc8-4927-b76b-3dd1cdd4dad7",
+      "458dbbaf-caf7-479b-b076-cadef249fb07",
+      "46fbb2e8-1c26-44ec-b4a4-72baec3a70d5",
+      "59fb8b52-9c11-4fd1-913a-644b1f45b2a9",
+      "e20fb362-06ef-498f-b306-cacc1eb1e361",
+      "f2476c63-dfe8-4c17-9721-89fca327c93e",
+      "ff997b14-3973-41a0-8315-38a86fb36f1f"
+    ],
+    "summary": "Customers broadly say the new or latest update is worse than before and urge uninstalling, without naming a specific feature that broke."
+  },
+  "playback.audio_quality": {
+    "misfit_ids": [],
+    "name": "Poor sound quality and missing audio features",
+    "request_id": "msg_011CgJKPrdrrCkmrrEoddZaD",
+    "sample_ids": [
+      "294a8b68-78e5-49b8-a21e-ce7fe48ebfb6",
+      "3955647e-d7c2-4c11-9758-7e47f5cd9e3f",
+      "42d96f23-f692-4ec9-a972-454ce3e15342",
+      "5dfbeac6-47bd-43f2-88a6-c8ae0fc28e69",
+      "6539bd0d-823e-4e3f-9610-f206a8751649",
+      "761af0a8-ffe7-49b8-990b-e88d11a7f962",
+      "83d9dbf0-ce3e-4830-b999-e39a2e09ed22",
+      "88ab2988-676f-4ff0-be12-634e67f362c6",
+      "9ce6a33d-84f5-4799-b2cf-b20d3d2be420",
+      "a2dbce27-c546-4cea-bd10-27de2e48866b",
+      "a8b706d3-1ec3-42c3-b83c-5a5e222914de",
+      "f5ac962b-36f1-4746-aa01-c8d62c431ef3"
+    ],
+    "summary": "Customers report low volume, distorted or scratchy sound, audio dropping out, sound only in one ear, and requests for lossless, HiFi, or Dolby Atmos audio."
+  },
+  "playback.connectivity_errors": {
+    "misfit_ids": [],
+    "name": "False offline errors despite active connection",
+    "request_id": "msg_011CgJKPrdrrCkmrrEoddZaD",
+    "sample_ids": [
+      "19ead9bb-53af-4933-b724-99e0d6125e23",
+      "1c800418-31b5-4a50-becb-8664d70c0120",
+      "2618c77d-da2f-4c3e-a984-3c6653714f37",
+      "2a0f223b-2a18-4c91-ac90-8bb7c6490f2e",
+      "2f9975fa-2e36-40a8-81ae-32468db084bf",
+      "455d14bb-b52d-42e7-8c2c-70ebb38a6dde",
+      "4f5bb89f-7a98-4df4-8d7e-313c0747c8a5",
+      "5ae9db3c-b157-4e0a-afc9-9521275c9705",
+      "7bf48490-4da2-4c15-a8fe-9e6b8a8d9de0",
+      "a6cdb859-ac46-427e-aaeb-ce2e3f6c9f25",
+      "b72bad67-9d5a-42f4-b354-4c8fa0ca9624",
+      "f44db791-bbed-42da-8c3e-54e2a317cc03"
+    ],
+    "summary": "Customers see 'no internet' or offline messages even while connected via WiFi or mobile data, and sometimes music fails to play on mobile data."
+  },
+  "playback.crash_or_wont_open": {
+    "misfit_ids": [],
+    "name": "Frequent crashes, freezes, and installation failures",
+    "request_id": "msg_011CgJKPrdrrCkmrrEoddZaD",
+    "sample_ids": [
+      "13ac8d27-6eb2-493e-8ec9-17a715daad6b",
+      "21242187-ec8c-4310-bb92-8ff33004de6a",
+      "3456fa98-e2e9-4e6a-b3fa-700b8be5eb12",
+      "3e03cc81-c340-48c7-9177-12d9f56880e2",
+      "50293077-585b-46b0-9dd3-347201c7ac88",
+      "72506694-5a45-4aa1-b1a9-dfb3e01817af",
+      "8fcabb6a-0122-4f53-976d-ad4ac08759cf",
+      "a07e0916-e74a-42a3-8fef-5afb85bc70ff",
+      "a17e15ba-d706-44e4-acf9-09e36ec6f739",
+      "a7ca2be3-f870-4aac-8b25-a6346f9cbd69",
+      "bd57ae87-dc94-46c3-b4f0-e1a562115376",
+      "d17c1377-8dc7-4e96-acde-3cfcb7073bd5"
+    ],
+    "summary": "Customers report the app freezing or crashing during playback or navigation, songs failing to play, and the app failing to install or open."
+  },
+  "playback.device_integration": {
+    "misfit_ids": [],
+    "name": "Breaks with Bluetooth, car, and smart speaker devices",
+    "request_id": "msg_011CgJKPrdrrCkmrrEoddZaD",
+    "sample_ids": [
+      "0fcbc9fb-d36a-4483-87f9-3d6024eaa2b1",
+      "1618da42-cc26-4fc0-bddd-14e7e7033cb2",
+      "41795ad2-6626-463c-81e4-fc54a0dc1f23",
+      "4f8633bc-d597-4d16-9584-c275350f05da",
+      "769d09bd-8834-47ff-a495-b9ae4151b74d",
+      "7dc95e71-46c6-47d7-87d0-068deb0104fb",
+      "a3d54eb0-6566-4bc2-9ba5-60db05db885a",
+      "a7d3c61d-9363-4501-bdf2-1bfccda0c3f6",
+      "beb3de2c-4312-4a99-bdf6-b3b3b921f8bd",
+      "ca7cc4ef-224c-4120-8138-984bec7196c5",
+      "ce9c71d0-ea49-44bb-ae3d-7538429b044f",
+      "e550ea6a-8832-4f61-bfc3-7936cb888e0d"
+    ],
+    "summary": "Customers report playback failing or desyncing through Bluetooth, Android Auto, car systems, Alexa, Google Home, and PlayStation, plus unwanted auto-start."
+  },
+  "playback.other": {
+    "misfit_ids": [
+      "938e7a1a-ec55-4017-a017-ebdc19c90d85",
+      "89747570-fcda-47c8-83b3-44f0b5548236",
+      "6fce96c1-4ad8-42b3-a85b-6f478ff7880b"
+    ],
+    "name": "Playback settings and app-update regressions",
+    "request_id": "msg_011CgJKQ9DVv5o4op2AtgBXe",
+    "sample_ids": [
+      "0e24e586-43db-45b4-8655-3cb4e2679e21",
+      "112e72fb-55eb-4d10-a03a-911f3664ac25",
+      "1bb44ff8-803e-4faa-b440-600b70d31b4d",
+      "695597ca-77cc-459b-bf80-43c6327ed16c",
+      "6f568cb2-876c-4eae-b98e-57e8dd18e903",
+      "6fce96c1-4ad8-42b3-a85b-6f478ff7880b",
+      "89747570-fcda-47c8-83b3-44f0b5548236",
+      "91c00197-f982-40fc-b86c-5de1663dedb8",
+      "938e7a1a-ec55-4017-a017-ebdc19c90d85",
+      "9e3d49a0-1890-41e9-8ef7-70fa228babc0",
+      "d5cddeea-f350-4430-8106-5d618d44ac38",
+      "df3af748-54c5-4f9b-ae40-6faf1c345bbe"
+    ],
+    "summary": "Customers report miscellaneous playback breakage such as wrong songs playing, equaliser resets, empty playlists, and background play failing after app updates."
+  },
+  "playback.performance_resource": {
+    "misfit_ids": [
+      "0ca83bd2-d175-4af7-ac28-cc7ce17ff637",
+      "08600671-46dc-4647-9de2-d487fcac6fe6"
+    ],
+    "name": "Slow loading, lag, battery and data drain",
+    "request_id": "msg_011CgJKQ9DVv5o4op2AtgBXe",
+    "sample_ids": [
+      "00a6ddc8-68af-448f-b3df-5c05a86f8940",
+      "08600671-46dc-4647-9de2-d487fcac6fe6",
+      "0ca83bd2-d175-4af7-ac28-cc7ce17ff637",
+      "13c1cf6f-db04-4a04-bd68-a0eac86b9d2c",
+      "5f459acc-ab31-478c-a643-e0b000bd0a54",
+      "60a5bcae-11a9-4cc2-9a18-a93920859962",
+      "6e25556e-ca53-4929-bed4-1c5d9f67ab7f",
+      "6fc7d744-014d-4369-b875-5f823aed9782",
+      "7e684b8b-fca0-49c1-9b0a-5ece975a6f85",
+      "849310fc-de24-4a17-a3f7-11462984888b",
+      "a5ddcba2-9034-480f-b49a-be10a6963173",
+      "fe7b3ad0-e8c1-4b56-9da1-1e0cf9e84ed4"
+    ],
+    "summary": "Customers say the app is slow to start and load, lags during playback, drains battery quickly, and uses excessive mobile data."
+  },
+  "playback.playback_interrupted": {
+    "misfit_ids": [
+      "6c3fd3bb-9e41-4b0f-b17d-d4966edc8c55"
+    ],
+    "name": "Songs won't play, skip, pause or cut out",
+    "request_id": "msg_011CgJKQ9DVv5o4op2AtgBXe",
+    "sample_ids": [
+      "1e169cbb-6785-4c74-9a9e-06784773302b",
+      "22f51ad8-2e4c-4f1e-8b26-c60137a387e4",
+      "41592c5f-2f2b-4437-be9b-e7eb7a04c8ac",
+      "5dd0b466-2c62-49b9-acf6-82ccd806ca6d",
+      "6c3fd3bb-9e41-4b0f-b17d-d4966edc8c55",
+      "7184a847-4fbe-4f0f-9aa5-74c013819ece",
+      "89e54a7b-d392-4521-8937-1870168d75e1",
+      "8bb43766-115f-46ee-bc17-bc4774219ba3",
+      "8e1d4bfc-ea28-4ff0-9975-cc1c91fbdbc9",
+      "cb6c883a-3265-4de5-a656-17ccea2b021f",
+      "cb990bfc-af7d-408b-a6a9-ee23ef8fecef",
+      "cdd81ece-173c-4941-8770-54f6faa481dc"
+    ],
+    "summary": "Customers report tracks refusing to start, wrong songs playing, playback freezing or pausing, and songs cutting out or skipping repeatedly."
+  },
+  "support.other": {
+    "misfit_ids": [
+      "a78ff897-3d10-4cf2-9485-5e1d4bb0f4c5",
+      "4e27eaa8-3c51-4a7d-b374-2cc0cb059dd8",
+      "315a8d2b-fb32-4a43-afdd-f118e0212ebe",
+      "f82ced19-7c97-4e62-a58f-d7cb521b8254"
+    ],
+    "name": "Miscellaneous support complaints and account issues",
+    "request_id": "msg_011CgJKQ9DVv5o4op2AtgBXe",
+    "sample_ids": [
+      "095a9065-6715-4a1a-9f0e-d7cb3675545d",
+      "315a8d2b-fb32-4a43-afdd-f118e0212ebe",
+      "3cedd529-aae0-440e-ae5e-3cceb970f8c2",
+      "4e27eaa8-3c51-4a7d-b374-2cc0cb059dd8",
+      "59c01537-5065-4b09-a4db-912300ff4495",
+      "74f89cf0-bf4a-4174-b641-f0ff520de6ad",
+      "81548b10-3988-4f14-a5d6-7704987e5fe4",
+      "a78ff897-3d10-4cf2-9485-5e1d4bb0f4c5",
+      "a8def716-606f-4bd7-afad-d94c3e3ce678",
+      "ab23eda3-e074-4779-b006-cc80e91622d1",
+      "bd78a875-b767-4e0f-b6ed-aed8c741b67e",
+      "f82ced19-7c97-4e62-a58f-d7cb521b8254"
+    ],
+    "summary": "Customers raise mixed support concerns including unwanted emails, share feature timeouts, address verification errors, and update-related reinstall needs."
+  },
+  "support.unresponsive_unhelpful": {
+    "misfit_ids": [
+      "d9ac488d-6eaa-4f2d-b7fc-726365e53cf4",
+      "780619c2-1d57-4d01-9da2-7cf993560da9"
+    ],
+    "name": "Support unreachable, slow or unhelpful",
+    "request_id": "msg_011CgJKQ9DVv5o4op2AtgBXe",
+    "sample_ids": [
+      "1761af09-42f3-4d48-8715-de9f9d9d2130",
+      "3131d756-b334-4032-bc14-b7a6ac720672",
+      "37e5be89-5d24-4b69-9724-ce4160721f37",
+      "6311b974-b025-4a9f-89be-783c33a7bbd7",
+      "761db308-1ff9-4c24-b075-0eafcb6ac46d",
+      "780619c2-1d57-4d01-9da2-7cf993560da9",
+      "85d0bb5a-4287-4cf9-918c-6358dd41689a",
+      "91f4aac3-e9e8-4cb3-b961-cf29d9384b79",
+      "98f0868b-316c-4fce-9616-ccb8ec0a4290",
+      "c7ac6978-1034-4175-a5ce-d21393af80e6",
+      "ccd23839-fad5-4c14-bc27-50096ac35448",
+      "d9ac488d-6eaa-4f2d-b7fc-726365e53cf4"
+    ],
+    "summary": "Customers say support is hard to reach, only offers bots, takes hours to respond, ignores complaints, and gives poor service."
+  },
+  "usability.ads_frequency_volume": {
+    "misfit_ids": [
+      "144b390c-4c7d-488b-8055-2c32d969db2e"
+    ],
+    "name": "Too many, repetitive and annoying ads",
+    "request_id": "msg_011CgJKQ9DVv5o4op2AtgBXe",
+    "sample_ids": [
+      "060f1b31-d4e6-45c3-b4f7-10cb329b1fb5",
+      "144b390c-4c7d-488b-8055-2c32d969db2e",
+      "1a1fff97-f014-419e-ae19-a96c96e3e6e4",
+      "211c0b54-0b22-469c-9160-bc49543f3deb",
+      "2244bd60-ea5f-46a4-b3dc-4b206907f9f5",
+      "3bddc4b5-af6d-4d39-a0aa-ba0b49cebc7a",
+      "57a290e2-1fe3-43a0-bb90-797c73e038f6",
+      "6b9586f6-0232-498f-b9fd-89385a643008",
+      "75fde611-fcd0-48bb-98fa-11b146b4ab98",
+      "b862c08b-ee0e-4fad-b18d-65d527512f43",
+      "be522046-2dfc-4547-9ee6-9b1108bbc516",
+      "d1ec6838-68ef-4e5b-ad2c-26f148c0bd4f"
+    ],
+    "summary": "Customers complain of excessive ad frequency, back-to-back ads between songs, blank ads, and ads that are irritating and disruptive."
+  },
+  "usability.controls_settings": {
+    "misfit_ids": [
+      "d4cc2ae0-278a-4ed1-9349-d21fe6fa455b",
+      "ee0a7f78-cb57-4f2b-9683-b9ccc5328214"
+    ],
+    "name": "Playback controls and toggles behaving badly",
+    "request_id": "msg_011CgJKQbrPXawF3rXFZTTh4",
+    "sample_ids": [
+      "059dc195-aed4-47f0-90c2-6c61a46f8bfe",
+      "45d340db-fe22-4d06-ab62-c20a69c296f1",
+      "58a09cda-f1a4-4cd9-a5a7-0a7e341edb49",
+      "6de195a4-f3cc-4bb2-9db8-0cdf34b73419",
+      "7d635944-fbb3-4dbf-b022-bd5cb08c7fe2",
+      "852338b6-e443-43c4-bd80-d8990d8040a5",
+      "886196e0-0ab6-4a3a-a940-dd2d39a84683",
+      "9932b6ab-09e8-4fa1-a3d8-4385986e0469",
+      "d4cc2ae0-278a-4ed1-9349-d21fe6fa455b",
+      "d9c0508f-4b19-4998-bfa2-e6d80311612d",
+      "ee0a7f78-cb57-4f2b-9683-b9ccc5328214",
+      "feeefb3b-0439-4e72-be98-bdedf235101a"
+    ],
+    "summary": "Customers report that repeat, skip-back/forward, toggles and autoplay controls are unreliable or missing, and that the app keeps resuming playback or prompting them against their wishes."
+  },
+  "usability.other": {
+    "misfit_ids": [
+      "d0cd12d9-3ecf-4f15-a303-84dbcfb61a3f"
+    ],
+    "name": "Miscellaneous bugs, autoplay, and missing features",
+    "request_id": "msg_011CgJKQbrPXawF3rXFZTTh4",
+    "sample_ids": [
+      "2789f43d-83bc-43b4-9032-267f1d71998e",
+      "3f31ccc8-2b7a-43a8-b0c3-3409e92d99b7",
+      "5a74fdfc-f5f7-458b-9eef-13f73c1258da",
+      "708086a9-eb71-4bd2-805f-ddf7a7bef777",
+      "95f56ab8-41df-472b-8623-3bea8714d460",
+      "c173e134-dba6-4a59-bc6f-ca7f1f545a5a",
+      "cac7b0c1-130a-4f22-84fc-8c4d1f7f6c22",
+      "d0cd12d9-3ecf-4f15-a303-84dbcfb61a3f",
+      "d44d8012-f977-4232-9962-7799af19fd2a",
+      "df96b2b5-723b-45af-8d3a-c0e8cb6e4d0a",
+      "e016bf0b-2919-4cd3-a3c7-487295c1c227",
+      "ea020279-d968-4100-95d2-87b14020f23f"
+    ],
+    "summary": "Customers report a mix of issues including unwanted autoplay that restarts after ads, a missing app icon, sharing failures, missing played history, and Chromebook problems."
+  },
+  "usability.playlist_queue_management": {
+    "misfit_ids": [
+      "94808987-a042-44b4-9d8e-9af4df78574e"
+    ],
+    "name": "Shuffle, queue, and playlist playback going wrong",
+    "request_id": "msg_011CgJKQbrPXawF3rXFZTTh4",
+    "sample_ids": [
+      "070ad6ce-7a59-4a4f-812f-eb79d68232f6",
+      "12047ea4-3039-4a4f-b0ba-5abc580d17e0",
+      "205cf51f-3750-408c-a18a-71792a9b2ebc",
+      "2e14d87b-4f3d-44b3-b5d7-488253b2e57f",
+      "30340218-0435-42c4-bcce-3fa9846e3e85",
+      "45457b5b-4477-4052-9f9b-6d1b2aabe91f",
+      "84764336-f4fd-4f1f-b8b5-2a24285fa9d9",
+      "900a4efb-ad67-431f-9048-5d6e945a20ea",
+      "94808987-a042-44b4-9d8e-9af4df78574e",
+      "c495830f-b2e8-483e-a7a0-819d55e15a6b",
+      "f10e798a-19d6-4cac-9fb0-23d1d8d33c99",
+      "f593c549-a38d-40b7-a137-3fb268675bc0"
+    ],
+    "summary": "Customers report that shuffle, skip, and playlist ordering behave unpredictably, that clicked songs play different tracks, and that unwanted songs get inserted into playlists and liked songs."
+  },
+  "usability.ui_redesign_navigation": {
+    "misfit_ids": [
+      "9e599216-f1cf-484e-96af-7ad193dcb997",
+      "987d8116-c8f0-4988-af86-76e961ee88f2"
+    ],
+    "name": "Disliked redesign hurts navigation and home screen",
+    "request_id": "msg_011CgJKQbrPXawF3rXFZTTh4",
+    "sample_ids": [
+      "252dbe96-2454-4a66-a55b-6a523ca0e850",
+      "4a00dcfd-55f4-4ac9-8dfd-4ed1b6dc1d82",
+      "727069e4-0db7-4e3b-b3c8-0c8fd3d2b6b4",
+      "7cfc6c7f-4c7c-487b-aced-80fdcdc7170d",
+      "95a8ff52-080f-48be-82ba-a8a389fb03b0",
+      "987d8116-c8f0-4988-af86-76e961ee88f2",
+      "9e599216-f1cf-484e-96af-7ad193dcb997",
+      "c8fe419f-103c-45e2-9640-83fb60488349",
+      "dcc54017-6cbb-4d0f-859b-4405a0d845ec",
+      "ec1b4b1f-f033-470b-a91d-24aa4e2e6d05",
+      "f1fcfe1f-d557-47ee-b88a-661762e854b8",
+      "f67b51b8-9dda-4724-a319-914dc387fc4e"
+    ],
+    "summary": "Customers report that the new UI and home dashboard are cluttered, ugly, and hard to navigate, with features moved or removed and content they don't want forced on them."
+  }
+}

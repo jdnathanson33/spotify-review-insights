@@ -1,0 +1,791 @@
+{
+  "area_totals": {
+    "access": {
+      "cancellation_count": 0,
+      "complaint_count": 2,
+      "issues": 1,
+      "severity_sum": 8
+    },
+    "billing/support": {
+      "cancellation_count": 2,
+      "complaint_count": 9,
+      "issues": 1,
+      "severity_sum": 27
+    },
+    "none": {
+      "cancellation_count": 3,
+      "complaint_count": 12,
+      "issues": 3,
+      "severity_sum": 24
+    },
+    "playback": {
+      "cancellation_count": 1,
+      "complaint_count": 8,
+      "issues": 7,
+      "severity_sum": 26
+    },
+    "usability": {
+      "cancellation_count": 4,
+      "complaint_count": 18,
+      "issues": 7,
+      "severity_sum": 40
+    }
+  },
+  "complaint_or_cancellation_records": 49,
+  "evidence_reviews": {
+    "access.login_failure": [
+      {
+        "helpful_votes": "0",
+        "intent": "complaint",
+        "quote": "It not letting me into my account",
+        "review_id": "32fb340f-4f9f-4551-8dae-755221e58d6a",
+        "severity": 4
+      },
+      {
+        "helpful_votes": "0",
+        "intent": "complaint",
+        "quote": "Will not except my password",
+        "review_id": "de0a9cdf-8974-48bc-802f-331228df4619",
+        "severity": 4
+      }
+    ],
+    "billing.premium_only_controls": [
+      {
+        "helpful_votes": "0",
+        "intent": "cancellation",
+        "quote": "the new update has made everthing premium and so usless",
+        "review_id": "21915fcd-9a35-48ba-b277-6296c4154603",
+        "severity": 3
+      },
+      {
+        "helpful_votes": "0",
+        "intent": "complaint",
+        "quote": "From last update they removed basic features of music player",
+        "review_id": "7084ced1-0428-4093-9328-442f74719b4f",
+        "severity": 3
+      },
+      {
+        "helpful_votes": "0",
+        "intent": "cancellation",
+        "quote": "I'll switch to some other apps",
+        "review_id": "88439ec2-7c49-4c57-bedb-c5e098692aff",
+        "severity": 3
+      },
+      {
+        "helpful_votes": "0",
+        "intent": "complaint",
+        "quote": "Too much restrictions",
+        "review_id": "89a8e180-7846-4421-a2b6-fa7787e9d0d2",
+        "severity": 3
+      }
+    ],
+    "other.generic_criticism": [
+      {
+        "helpful_votes": "0",
+        "intent": "complaint",
+        "quote": "Worst app",
+        "review_id": "06a45bd5-3ed9-43af-b7f2-8b9487e2ffff",
+        "severity": 2
+      },
+      {
+        "helpful_votes": "0",
+        "intent": "complaint",
+        "quote": "Worst app.",
+        "review_id": "178c3b49-b689-4fe4-92a2-2257a58e6d95",
+        "severity": 2
+      },
+      {
+        "helpful_votes": "0",
+        "intent": "complaint",
+        "quote": "Noob app",
+        "review_id": "2d5cdd20-3094-40a5-bc6e-653302b59b56",
+        "severity": 2
+      },
+      {
+        "helpful_votes": "0",
+        "intent": "complaint",
+        "quote": "Disappointing",
+        "review_id": "51bfd887-24a0-4741-8b59-68e0a726dd7a",
+        "severity": 2
+      }
+    ],
+    "playback.crash_or_wont_open": [
+      {
+        "helpful_votes": "1",
+        "intent": "complaint",
+        "quote": "The latest update has caused my app to crash I cant open the app",
+        "review_id": "55cc3abf-c295-4591-8c3a-78085cfdefaa",
+        "severity": 4
+      },
+      {
+        "helpful_votes": "0",
+        "intent": "complaint",
+        "quote": "App is stuck on loading/logo screen",
+        "review_id": "66a29b3c-c14d-440e-b722-b23e0c99ae82",
+        "severity": 4
+      }
+    ],
+    "usability.ads_frequency_volume": [
+      {
+        "helpful_votes": "0",
+        "intent": "complaint",
+        "quote": "Too many ads.... it's literally useless if u hv not taken premium",
+        "review_id": "e5e6c55f-3069-4b7c-9807-f8b5d5bf2726",
+        "severity": 3
+      },
+      {
+        "helpful_votes": "0",
+        "intent": "cancellation",
+        "quote": "his premium adds are everywhere now",
+        "review_id": "035213ba-b1b9-411c-b028-70296e5f0e73",
+        "severity": 2
+      },
+      {
+        "helpful_votes": "0",
+        "intent": "complaint",
+        "quote": "it's always every 1 or 2 song then instant ads",
+        "review_id": "3e8bdc92-4934-457e-85cc-8b9d14bf51c0",
+        "severity": 2
+      },
+      {
+        "helpful_votes": "0",
+        "intent": "complaint",
+        "quote": "This app is nice but adds are too much",
+        "review_id": "85383985-844d-4f9b-bcd9-d6016ac35f6b",
+        "severity": 2
+      }
+    ],
+    "usability.ui_redesign_navigation": [
+      {
+        "helpful_votes": "10",
+        "intent": "complaint",
+        "quote": "Spotify constantly rolls out new major UX updates without any use of their beta program. Rolling out big automatically playing audio elements,without any clear way to disable the automatic playing in the settings?",
+        "review_id": "d455c11e-c530-4c03-a395-38f5a5cdb8d3",
+        "severity": 2
+      },
+      {
+        "helpful_votes": "1",
+        "intent": "complaint",
+        "quote": "the new homescreen update is horrible",
+        "review_id": "94c9f2f9-36fa-4c11-936e-660514fe7a35",
+        "severity": 2
+      },
+      {
+        "helpful_votes": "0",
+        "intent": "cancellation",
+        "quote": "Am very sad about the new spotfy update. i can't play song happly . Can't repeat and play specific part.please solve this matter. I'm leaving spotfy",
+        "review_id": "e16a4550-43e7-4ae1-b538-a65cc652c31b",
+        "severity": 3
+      }
+    ]
+  },
+  "intent_counts": {
+    "cancellation": 10,
+    "complaint": 39,
+    "praise": 41,
+    "request": 2,
+    "unclear": 8
+  },
+  "monthly_complaints_top5": {
+    "access.login_failure": [
+      {
+        "all_complaints": 2,
+        "issue_complaints": 0,
+        "month": "2022-06"
+      },
+      {
+        "all_complaints": 3,
+        "issue_complaints": 0,
+        "month": "2022-07"
+      },
+      {
+        "all_complaints": 1,
+        "issue_complaints": 0,
+        "month": "2022-08"
+      },
+      {
+        "all_complaints": 1,
+        "issue_complaints": 0,
+        "month": "2022-09"
+      },
+      {
+        "all_complaints": 1,
+        "issue_complaints": 0,
+        "month": "2022-10"
+      },
+      {
+        "all_complaints": 1,
+        "issue_complaints": 0,
+        "month": "2022-11"
+      },
+      {
+        "all_complaints": 3,
+        "issue_complaints": 1,
+        "month": "2023-01"
+      },
+      {
+        "all_complaints": 2,
+        "issue_complaints": 0,
+        "month": "2023-02"
+      },
+      {
+        "all_complaints": 3,
+        "issue_complaints": 0,
+        "month": "2023-03"
+      },
+      {
+        "all_complaints": 1,
+        "issue_complaints": 0,
+        "month": "2023-04"
+      },
+      {
+        "all_complaints": 2,
+        "issue_complaints": 0,
+        "month": "2023-05"
+      },
+      {
+        "all_complaints": 3,
+        "issue_complaints": 0,
+        "month": "2023-06"
+      },
+      {
+        "all_complaints": 5,
+        "issue_complaints": 0,
+        "month": "2023-07"
+      },
+      {
+        "all_complaints": 1,
+        "issue_complaints": 1,
+        "month": "2023-08"
+      },
+      {
+        "all_complaints": 2,
+        "issue_complaints": 0,
+        "month": "2023-09"
+      },
+      {
+        "all_complaints": 15,
+        "issue_complaints": 0,
+        "month": "2023-10"
+      },
+      {
+        "all_complaints": 3,
+        "issue_complaints": 0,
+        "month": "2023-11"
+      }
+    ],
+    "billing.premium_only_controls": [
+      {
+        "all_complaints": 2,
+        "issue_complaints": 0,
+        "month": "2022-06"
+      },
+      {
+        "all_complaints": 3,
+        "issue_complaints": 0,
+        "month": "2022-07"
+      },
+      {
+        "all_complaints": 1,
+        "issue_complaints": 0,
+        "month": "2022-08"
+      },
+      {
+        "all_complaints": 1,
+        "issue_complaints": 0,
+        "month": "2022-09"
+      },
+      {
+        "all_complaints": 1,
+        "issue_complaints": 1,
+        "month": "2022-10"
+      },
+      {
+        "all_complaints": 1,
+        "issue_complaints": 0,
+        "month": "2022-11"
+      },
+      {
+        "all_complaints": 3,
+        "issue_complaints": 0,
+        "month": "2023-01"
+      },
+      {
+        "all_complaints": 2,
+        "issue_complaints": 0,
+        "month": "2023-02"
+      },
+      {
+        "all_complaints": 3,
+        "issue_complaints": 0,
+        "month": "2023-03"
+      },
+      {
+        "all_complaints": 1,
+        "issue_complaints": 1,
+        "month": "2023-04"
+      },
+      {
+        "all_complaints": 2,
+        "issue_complaints": 1,
+        "month": "2023-05"
+      },
+      {
+        "all_complaints": 3,
+        "issue_complaints": 0,
+        "month": "2023-06"
+      },
+      {
+        "all_complaints": 5,
+        "issue_complaints": 0,
+        "month": "2023-07"
+      },
+      {
+        "all_complaints": 1,
+        "issue_complaints": 0,
+        "month": "2023-08"
+      },
+      {
+        "all_complaints": 2,
+        "issue_complaints": 0,
+        "month": "2023-09"
+      },
+      {
+        "all_complaints": 15,
+        "issue_complaints": 6,
+        "month": "2023-10"
+      },
+      {
+        "all_complaints": 3,
+        "issue_complaints": 0,
+        "month": "2023-11"
+      }
+    ],
+    "other.generic_criticism": [
+      {
+        "all_complaints": 2,
+        "issue_complaints": 0,
+        "month": "2022-06"
+      },
+      {
+        "all_complaints": 3,
+        "issue_complaints": 0,
+        "month": "2022-07"
+      },
+      {
+        "all_complaints": 1,
+        "issue_complaints": 0,
+        "month": "2022-08"
+      },
+      {
+        "all_complaints": 1,
+        "issue_complaints": 0,
+        "month": "2022-09"
+      },
+      {
+        "all_complaints": 1,
+        "issue_complaints": 0,
+        "month": "2022-10"
+      },
+      {
+        "all_complaints": 1,
+        "issue_complaints": 0,
+        "month": "2022-11"
+      },
+      {
+        "all_complaints": 3,
+        "issue_complaints": 1,
+        "month": "2023-01"
+      },
+      {
+        "all_complaints": 2,
+        "issue_complaints": 0,
+        "month": "2023-02"
+      },
+      {
+        "all_complaints": 3,
+        "issue_complaints": 0,
+        "month": "2023-03"
+      },
+      {
+        "all_complaints": 1,
+        "issue_complaints": 0,
+        "month": "2023-04"
+      },
+      {
+        "all_complaints": 2,
+        "issue_complaints": 0,
+        "month": "2023-05"
+      },
+      {
+        "all_complaints": 3,
+        "issue_complaints": 2,
+        "month": "2023-06"
+      },
+      {
+        "all_complaints": 5,
+        "issue_complaints": 2,
+        "month": "2023-07"
+      },
+      {
+        "all_complaints": 1,
+        "issue_complaints": 0,
+        "month": "2023-08"
+      },
+      {
+        "all_complaints": 2,
+        "issue_complaints": 1,
+        "month": "2023-09"
+      },
+      {
+        "all_complaints": 15,
+        "issue_complaints": 1,
+        "month": "2023-10"
+      },
+      {
+        "all_complaints": 3,
+        "issue_complaints": 1,
+        "month": "2023-11"
+      }
+    ],
+    "playback.crash_or_wont_open": [
+      {
+        "all_complaints": 2,
+        "issue_complaints": 0,
+        "month": "2022-06"
+      },
+      {
+        "all_complaints": 3,
+        "issue_complaints": 1,
+        "month": "2022-07"
+      },
+      {
+        "all_complaints": 1,
+        "issue_complaints": 0,
+        "month": "2022-08"
+      },
+      {
+        "all_complaints": 1,
+        "issue_complaints": 0,
+        "month": "2022-09"
+      },
+      {
+        "all_complaints": 1,
+        "issue_complaints": 0,
+        "month": "2022-10"
+      },
+      {
+        "all_complaints": 1,
+        "issue_complaints": 0,
+        "month": "2022-11"
+      },
+      {
+        "all_complaints": 3,
+        "issue_complaints": 1,
+        "month": "2023-01"
+      },
+      {
+        "all_complaints": 2,
+        "issue_complaints": 0,
+        "month": "2023-02"
+      },
+      {
+        "all_complaints": 3,
+        "issue_complaints": 0,
+        "month": "2023-03"
+      },
+      {
+        "all_complaints": 1,
+        "issue_complaints": 0,
+        "month": "2023-04"
+      },
+      {
+        "all_complaints": 2,
+        "issue_complaints": 0,
+        "month": "2023-05"
+      },
+      {
+        "all_complaints": 3,
+        "issue_complaints": 0,
+        "month": "2023-06"
+      },
+      {
+        "all_complaints": 5,
+        "issue_complaints": 0,
+        "month": "2023-07"
+      },
+      {
+        "all_complaints": 1,
+        "issue_complaints": 0,
+        "month": "2023-08"
+      },
+      {
+        "all_complaints": 2,
+        "issue_complaints": 0,
+        "month": "2023-09"
+      },
+      {
+        "all_complaints": 15,
+        "issue_complaints": 0,
+        "month": "2023-10"
+      },
+      {
+        "all_complaints": 3,
+        "issue_complaints": 0,
+        "month": "2023-11"
+      }
+    ],
+    "usability.ads_frequency_volume": [
+      {
+        "all_complaints": 2,
+        "issue_complaints": 0,
+        "month": "2022-06"
+      },
+      {
+        "all_complaints": 3,
+        "issue_complaints": 1,
+        "month": "2022-07"
+      },
+      {
+        "all_complaints": 1,
+        "issue_complaints": 0,
+        "month": "2022-08"
+      },
+      {
+        "all_complaints": 1,
+        "issue_complaints": 1,
+        "month": "2022-09"
+      },
+      {
+        "all_complaints": 1,
+        "issue_complaints": 0,
+        "month": "2022-10"
+      },
+      {
+        "all_complaints": 1,
+        "issue_complaints": 1,
+        "month": "2022-11"
+      },
+      {
+        "all_complaints": 3,
+        "issue_complaints": 0,
+        "month": "2023-01"
+      },
+      {
+        "all_complaints": 2,
+        "issue_complaints": 1,
+        "month": "2023-02"
+      },
+      {
+        "all_complaints": 3,
+        "issue_complaints": 0,
+        "month": "2023-03"
+      },
+      {
+        "all_complaints": 1,
+        "issue_complaints": 0,
+        "month": "2023-04"
+      },
+      {
+        "all_complaints": 2,
+        "issue_complaints": 0,
+        "month": "2023-05"
+      },
+      {
+        "all_complaints": 3,
+        "issue_complaints": 0,
+        "month": "2023-06"
+      },
+      {
+        "all_complaints": 5,
+        "issue_complaints": 0,
+        "month": "2023-07"
+      },
+      {
+        "all_complaints": 1,
+        "issue_complaints": 0,
+        "month": "2023-08"
+      },
+      {
+        "all_complaints": 2,
+        "issue_complaints": 1,
+        "month": "2023-09"
+      },
+      {
+        "all_complaints": 15,
+        "issue_complaints": 0,
+        "month": "2023-10"
+      },
+      {
+        "all_complaints": 3,
+        "issue_complaints": 2,
+        "month": "2023-11"
+      }
+    ]
+  },
+  "ranking_rule": "priority_score = complaint_count x mean_severity = severity_sum; ties by issue_id ascending",
+  "ranking_top": [
+    {
+      "area": "billing/support",
+      "cancellation_count": "2",
+      "complaint_count": "9",
+      "issue_id": "billing.premium_only_controls",
+      "mean_severity": "3.000000",
+      "name": "Basic playback controls moved behind Premium",
+      "priority_score": "27",
+      "rank": "1",
+      "severity_4plus": "0",
+      "severity_sum": "27"
+    },
+    {
+      "area": "none",
+      "cancellation_count": "0",
+      "complaint_count": "8",
+      "issue_id": "other.generic_criticism",
+      "mean_severity": "2.000000",
+      "name": "Generic negative sentiment without specific defect",
+      "priority_score": "16",
+      "rank": "2",
+      "severity_4plus": "0",
+      "severity_sum": "16"
+    },
+    {
+      "area": "usability",
+      "cancellation_count": "1",
+      "complaint_count": "7",
+      "issue_id": "usability.ads_frequency_volume",
+      "mean_severity": "2.142857",
+      "name": "Excessive, frequent, and loud ads",
+      "priority_score": "15",
+      "rank": "3",
+      "severity_4plus": "0",
+      "severity_sum": "15"
+    },
+    {
+      "area": "access",
+      "cancellation_count": "0",
+      "complaint_count": "2",
+      "issue_id": "access.login_failure",
+      "mean_severity": "4.000000",
+      "name": "Cannot log in or access account",
+      "priority_score": "8",
+      "rank": "4",
+      "severity_4plus": "2",
+      "severity_sum": "8"
+    },
+    {
+      "area": "playback",
+      "cancellation_count": "0",
+      "complaint_count": "2",
+      "issue_id": "playback.crash_or_wont_open",
+      "mean_severity": "4.000000",
+      "name": "App crashes or stuck on loading screen",
+      "priority_score": "8",
+      "rank": "5",
+      "severity_4plus": "2",
+      "severity_sum": "8"
+    },
+    {
+      "area": "usability",
+      "cancellation_count": "1",
+      "complaint_count": "3",
+      "issue_id": "usability.ui_redesign_navigation",
+      "mean_severity": "2.333333",
+      "name": "Disliked home screen and UI redesign",
+      "priority_score": "7",
+      "rank": "6",
+      "severity_4plus": "0",
+      "severity_sum": "7"
+    },
+    {
+      "area": "usability",
+      "cancellation_count": "0",
+      "complaint_count": "2",
+      "issue_id": "catalog.lyrics_availability",
+      "mean_severity": "2.000000",
+      "name": "Lyrics missing or inconsistently shown",
+      "priority_score": "4",
+      "rank": "7",
+      "severity_4plus": "0",
+      "severity_sum": "4"
+    },
+    {
+      "area": "usability",
+      "cancellation_count": "0",
+      "complaint_count": "2",
+      "issue_id": "catalog.missing_content",
+      "mean_severity": "2.000000",
+      "name": "Many songs and genres unavailable",
+      "priority_score": "4",
+      "rank": "8",
+      "severity_4plus": "0",
+      "severity_sum": "4"
+    },
+    {
+      "area": "usability",
+      "cancellation_count": "1",
+      "complaint_count": "2",
+      "issue_id": "catalog.recommendations_quality",
+      "mean_severity": "2.000000",
+      "name": "Recommendations and shuffle feel random or intrusive",
+      "priority_score": "4",
+      "rank": "9",
+      "severity_4plus": "0",
+      "severity_sum": "4"
+    },
+    {
+      "area": "playback",
+      "cancellation_count": "0",
+      "complaint_count": "1",
+      "issue_id": "downloads.offline_playback_failure",
+      "mean_severity": "4.000000",
+      "name": "Downloaded music fails to play offline",
+      "priority_score": "4",
+      "rank": "10",
+      "severity_4plus": "1",
+      "severity_sum": "4"
+    },
+    {
+      "area": "none",
+      "cancellation_count": "1",
+      "complaint_count": "2",
+      "issue_id": "other.boycott_political",
+      "mean_severity": "2.000000",
+      "name": "Boycott calls over political or religious content",
+      "priority_score": "4",
+      "rank": "11",
+      "severity_4plus": "0",
+      "severity_sum": "4"
+    },
+    {
+      "area": "none",
+      "cancellation_count": "2",
+      "complaint_count": "2",
+      "issue_id": "other.update_regression_generic",
+      "mean_severity": "2.000000",
+      "name": "Recent update disliked without specifics",
+      "priority_score": "4",
+      "rank": "12",
+      "severity_4plus": "0",
+      "severity_sum": "4"
+    }
+  ],
+  "scope": {
+    "completed": 100,
+    "pending_unresolved": 0,
+    "quarantine_reasons": {},
+    "quarantined": 0,
+    "reviews_in_scope": 100,
+    "window": "2022-05-17 to 2023-11-15 (first and last calendar months are partial)"
+  },
+  "verification": {
+    "agreement": {
+      "intent": 0.9,
+      "severity": 0.9,
+      "topic": 0.9
+    },
+    "compared": 20,
+    "disagreements": 5,
+    "severity_mae": 0.1
+  }
+}

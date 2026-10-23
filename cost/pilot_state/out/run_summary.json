@@ -1,0 +1,107 @@
+{
+  "args": {
+    "budget_usd": 2.0,
+    "cmd": "run",
+    "fallback_fraction": 0.0,
+    "input": "/home/claude/spotify-pipeline/data/cost_100.csv",
+    "max_batches": null,
+    "mock": false,
+    "phase": "initial",
+    "run_id": "pilot-warm-20261022T174720",
+    "stages": "ingest,enrich,verify,group,rank,memo",
+    "state": "/home/claude/spotify-pipeline/cost/pilot_state",
+    "verify_fraction": 0.2,
+    "verify_max": 5000,
+    "verify_min": 20,
+    "workers": 1
+  },
+  "calls": {
+    "attempts": 0,
+    "cost_usd": 0,
+    "failed": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "succeeded": 0
+  },
+  "finished_at": "2026-10-22T17:47:21-0700",
+  "interrupted": false,
+  "label_config": "claude-haiku-5-5+effort-low+nothink+enrich-v2+schema-v1+entities-v1",
+  "ledger": {
+    "cap_usd": 2.0,
+    "reserved_usd": 0.0,
+    "spent_usd": 0.079157
+  },
+  "run_id": "pilot-warm-20261022T174720",
+  "stages": {
+    "enrich": {
+      "batches": 0,
+      "completed": 0,
+      "elapsed_s": 0.0,
+      "failed_batches": 0,
+      "fallback_items": 0,
+      "items_sent": 0,
+      "quarantined": 0,
+      "remaining_pending": 0,
+      "retried_items": 0,
+      "seconds": 0.001,
+      "stopped_reason": null
+    },
+    "group": {
+      "calls": 0,
+      "issues": 19,
+      "seconds": 0.003
+    },
+    "ingest": {
+      "counts": {
+        "distinct_nonempty_texts": 100,
+        "duplicate_review_ids": 0,
+        "empty_review_text": 0,
+        "invalid_rating": 0,
+        "missing_app_version": 18,
+        "nonempty_to_classify": 100,
+        "records": 100,
+        "repeated_text_groups": 0,
+        "reuse_savings_rows": 0,
+        "reviews_with_repeated_text": 0,
+        "unique_review_ids": 100
+      },
+      "input_sha256": "c884ac3b9be5066995d5063f96ad9af6e5e082975788c1684c4f6b6ea661dd0e",
+      "seconds": 0.001
+    },
+    "memo": {
+      "calls": 0,
+      "claims": 7,
+      "priority_area": "billing/support",
+      "seconds": 0.004,
+      "validation_errors": []
+    },
+    "rank": {
+      "completed_records": 100,
+      "issues_ranked": 19,
+      "memberships": 49,
+      "seconds": 0.003
+    },
+    "verify": {
+      "agreement": {
+        "intent": 0.9,
+        "severity": 0.9,
+        "topic": 0.9
+      },
+      "compared": 20,
+      "disagreements": 5,
+      "new_calls": 0,
+      "sample_declared": {
+        "fraction": 0.2,
+        "max": 5000,
+        "min": 20,
+        "population_distinct_texts": 100,
+        "sampled": 20,
+        "seed": "verify-sample-v1"
+      },
+      "seconds": 0.002,
+      "severity_mae": 0.1
+    }
+  },
+  "started_at": "2026-10-22T17:47:20-0700",
+  "wall_clock_s": 1.457
+}

@@ -1,0 +1,59 @@
+Script started on 2026-10-22 18:01:57-07:00 [COMMAND="bash scripts/resume_demo.sh" <not executed on terminal>]
+== 1. start the full run (phase=initial, 4 workers) and interrupt it with SIGINT after saved progress
+budget: cap $40.00 for this state dir; already spent $0.4772
+ingest: {'records': 660622, 'duplicate_review_ids': 0, 'empty_review_text': 13, 'missing_app_version': 159701, 'invalid_rating': 0, 'unique_review_ids': 660622, 'nonempty_to_classify': 660609, 'distinct_nonempty_texts': 484189, 'reviews_with_repeated_text': 192342, 'repeated_text_groups': 15922, 'reuse_savings_rows': 176420}
+enrich: 475697 pending distinct texts in scope; 13 empty-text quarantines; workers=4
+  20/9514 batches, 1000 completed, 14.3 texts/s, spend 0.5189
+== sending SIGINT to 802
+
+!! signal 2: finishing in-flight batches, saving, then stopping (no new dispatch)
+enrich: {'seconds': 124.567, 'batches': 33, 'items_sent': 1650, 'completed': 1647, 'retried_items': 64, 'fallback_items': 0, 'quarantined': 3, 'failed_batches': 0, 'stopped_reason': 'interrupted', 'elapsed_s': 102.55, 'remaining_pending': 474047}
+{
+ "run_id": "full-initial-sync",
+ "wall_clock_s": 169.739,
+ "interrupted": true,
+ "calls": {
+  "attempts": 41,
+  "succeeded": 41,
+  "failed": 0,
+  "input_tokens": 75232,
+  "output_tokens": 114008,
+  "cost_usd": 0.065735
+ }
+}
+== 2. snapshot completed IDs before resume
+checkpoint: 134904 completed IDs -> grading/checkpoint_before.json
+== 3. resume (phase=resume): only pending texts are dispatched
+budget: cap $40.00 for this state dir; already spent $0.5429
+enrich: 474047 pending distinct texts in scope; 13 empty-text quarantines; workers=4
+  20/24 batches, 1000 completed, 14.3 texts/s, spend 0.5830
+enrich: {'seconds': 102.485, 'batches': 24, 'items_sent': 1200, 'completed': 1200, 'retried_items': 4, 'fallback_items': 0, 'quarantined': 0, 'failed_batches': 0, 'stopped_reason': None, 'elapsed_s': 79.99, 'remaining_pending': 472847}
+{
+ "run_id": "full-resume-sync",
+ "wall_clock_s": 104.383,
+ "interrupted": false,
+ "calls": {
+  "attempts": 28,
+  "succeeded": 28,
+  "failed": 0,
+  "input_tokens": 52640,
+  "output_tokens": 79445,
+  "cost_usd": 0.045812
+ }
+}
+== 4. snapshot after resume and check no completed ID was re-sent
+checkpoint: 137856 completed IDs -> grading/checkpoint_after.json
+{
+ "completed_before": 134904,
+ "completed_after": 137856,
+ "new_after_resume": 2952,
+ "before_is_subset_of_after": true,
+ "resume_phase_enrich_calls": 28,
+ "completed_ids_resent_in_resume_calls": 0,
+ "interrupted_runs": [
+  "full-initial-sync"
+ ],
+ "passed": true
+}
+
+Script done on 2026-10-22 18:07:00-07:00 [COMMAND_EXIT_CODE="0"]

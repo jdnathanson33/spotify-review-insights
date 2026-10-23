@@ -1,0 +1,250 @@
+{
+  "synthetic_test_copy": true,
+  "n_planted": 40,
+  "detected_by_verifier_comparison": 40,
+  "detection_rate": 1.0,
+  "baseline_topic_disagreements_before_planting": 0,
+  "method": "Records whose first-pass topic matched the independent verifier were copied; the copy's topic was replaced with a different random topic; code re-ran the verifier comparison on the copy. Originals are untouched; no new model calls.",
+  "cases": [
+    {
+      "review_id": "b979fff6-7b74-4330-a2a7-d087ecb05f18",
+      "original_topic": "other",
+      "planted_topic": "support",
+      "verifier_topic": "other"
+    },
+    {
+      "review_id": "45225441-d423-41af-ab13-02f4e7c95be6",
+      "original_topic": "other",
+      "planted_topic": "billing",
+      "verifier_topic": "other"
+    },
+    {
+      "review_id": "4548c45b-9eff-4186-abf5-f691f5d0d20d",
+      "original_topic": "usability",
+      "planted_topic": "access",
+      "verifier_topic": "usability"
+    },
+    {
+      "review_id": "3e540854-2756-47d8-9239-e86ce7c9e888",
+      "original_topic": "usability",
+      "planted_topic": "other",
+      "verifier_topic": "usability"
+    },
+    {
+      "review_id": "c828ac3a-1568-44e9-92a3-114d1ce9a985",
+      "original_topic": "billing",
+      "planted_topic": "other",
+      "verifier_topic": "billing"
+    },
+    {
+      "review_id": "f949b345-125f-415a-922b-c60d7681df18",
+      "original_topic": "other",
+      "planted_topic": "billing",
+      "verifier_topic": "other"
+    },
+    {
+      "review_id": "6d52a74e-2860-4475-9660-7245a7ac4e91",
+      "original_topic": "other",
+      "planted_topic": "catalog",
+      "verifier_topic": "other"
+    },
+    {
+      "review_id": "5d71d77d-4e4c-47cb-9042-ba949c395aa0",
+      "original_topic": "other",
+      "planted_topic": "catalog",
+      "verifier_topic": "other"
+    },
+    {
+      "review_id": "f7be6b3c-ef6d-486a-8922-064724901d27",
+      "original_topic": "other",
+      "planted_topic": "catalog",
+      "verifier_topic": "other"
+    },
+    {
+      "review_id": "50b78c33-bcfc-42d4-ae64-00ed71c0d99a",
+      "original_topic": "usability",
+      "planted_topic": "support",
+      "verifier_topic": "usability"
+    },
+    {
+      "review_id": "148e7926-fd06-499d-b18d-47fc208acca8",
+      "original_topic": "usability",
+      "planted_topic": "playback",
+      "verifier_topic": "usability"
+    },
+    {
+      "review_id": "2465a75c-6e14-4c9e-9cf9-854f39f71a21",
+      "original_topic": "other",
+      "planted_topic": "downloads",
+      "verifier_topic": "other"
+    },
+    {
+      "review_id": "17547a35-daf5-458b-bd1c-4ae2f467b9e1",
+      "original_topic": "access",
+      "planted_topic": "downloads",
+      "verifier_topic": "access"
+    },
+    {
+      "review_id": "fafc830f-dad6-4dd9-82ae-3186fad6ea0f",
+      "original_topic": "downloads",
+      "planted_topic": "usability",
+      "verifier_topic": "downloads"
+    },
+    {
+      "review_id": "880e6253-8e21-4634-8ffc-b6cbb3fe99de",
+      "original_topic": "other",
+      "planted_topic": "access",
+      "verifier_topic": "other"
+    },
+    {
+      "review_id": "0fa776fa-1dd6-4a7b-b8c1-4d55d825a05c",
+      "original_topic": "catalog",
+      "planted_topic": "usability",
+      "verifier_topic": "catalog"
+    },
+    {
+      "review_id": "aeec932d-edc3-4669-8dbe-e8af4d253b77",
+      "original_topic": "access",
+      "planted_topic": "playback",
+      "verifier_topic": "access"
+    },
+    {
+      "review_id": "80ac219a-18cb-4dd9-a449-da4d2d276616",
+      "original_topic": "billing",
+      "planted_topic": "access",
+      "verifier_topic": "billing"
+    },
+    {
+      "review_id": "71beaa78-eb9f-43b4-831d-0f62a8ab0b54",
+      "original_topic": "other",
+      "planted_topic": "usability",
+      "verifier_topic": "other"
+    },
+    {
+      "review_id": "5dcc9594-8f01-47fb-8761-a41a1a3d480d",
+      "original_topic": "usability",
+      "planted_topic": "playback",
+      "verifier_topic": "usability"
+    },
+    {
+      "review_id": "570160d0-7fd6-43f8-a985-7ce3fdaf84f4",
+      "original_topic": "other",
+      "planted_topic": "playback",
+      "verifier_topic": "other"
+    },
+    {
+      "review_id": "d6fec6ba-504d-4460-aaf0-9226bb07f20f",
+      "original_topic": "catalog",
+      "planted_topic": "playback",
+      "verifier_topic": "catalog"
+    },
+    {
+      "review_id": "441bd053-b79c-42cd-89a6-9e5437770e22",
+      "original_topic": "downloads",
+      "planted_topic": "usability",
+      "verifier_topic": "downloads"
+    },
+    {
+      "review_id": "36453498-ccbe-4045-8eb2-9766c2d2c325",
+      "original_topic": "other",
+      "planted_topic": "billing",
+      "verifier_topic": "other"
+    },
+    {
+      "review_id": "cede6db4-ef81-4285-921a-8375d733c546",
+      "original_topic": "billing",
+      "planted_topic": "usability",
+      "verifier_topic": "billing"
+    },
+    {
+      "review_id": "89c4fe46-d1a6-4ec0-bcab-563a83cc604e",
+      "original_topic": "billing",
+      "planted_topic": "access",
+      "verifier_topic": "billing"
+    },
+    {
+      "review_id": "e020512c-beb7-48a7-9640-e8aae3a9c4d7",
+      "original_topic": "other",
+      "planted_topic": "support",
+      "verifier_topic": "other"
+    },
+    {
+      "review_id": "81134559-bbf1-4449-8739-8bd6d7eb2dbc",
+      "original_topic": "billing",
+      "planted_topic": "downloads",
+      "verifier_topic": "billing"
+    },
+    {
+      "review_id": "1ac6512f-f688-41ae-9c22-a496dae5727f",
+      "original_topic": "catalog",
+      "planted_topic": "playback",
+      "verifier_topic": "catalog"
+    },
+    {
+      "review_id": "528e87d4-eb59-44fb-8416-1116508d6c1e",
+      "original_topic": "usability",
+      "planted_topic": "billing",
+      "verifier_topic": "usability"
+    },
+    {
+      "review_id": "e3d0b736-409b-4ad9-948a-604cc0d20ec9",
+      "original_topic": "other",
+      "planted_topic": "usability",
+      "verifier_topic": "other"
+    },
+    {
+      "review_id": "a64736a2-14f5-4f89-b85f-e290326c4d0e",
+      "original_topic": "playback",
+      "planted_topic": "access",
+      "verifier_topic": "playback"
+    },
+    {
+      "review_id": "94bd955b-cfa6-4975-a951-9df19a09f6ea",
+      "original_topic": "playback",
+      "planted_topic": "access",
+      "verifier_topic": "playback"
+    },
+    {
+      "review_id": "8f1a8908-8de7-4a1f-b982-5e97ba60c98c",
+      "original_topic": "other",
+      "planted_topic": "playback",
+      "verifier_topic": "other"
+    },
+    {
+      "review_id": "ec132d1a-9178-4548-b025-528b83f02e81",
+      "original_topic": "billing",
+      "planted_topic": "playback",
+      "verifier_topic": "billing"
+    },
+    {
+      "review_id": "0b918c4b-0b26-4ed2-a7cb-cb65849e8c11",
+      "original_topic": "other",
+      "planted_topic": "access",
+      "verifier_topic": "other"
+    },
+    {
+      "review_id": "c336d7a5-2712-4053-b86c-d604b6f128c7",
+      "original_topic": "usability",
+      "planted_topic": "downloads",
+      "verifier_topic": "usability"
+    },
+    {
+      "review_id": "e1624225-befa-47d1-bc9d-5b09032a604a",
+      "original_topic": "other",
+      "planted_topic": "usability",
+      "verifier_topic": "other"
+    },
+    {
+      "review_id": "dc871454-fc4f-49b3-9d7f-f620367e60ff",
+      "original_topic": "downloads",
+      "planted_topic": "usability",
+      "verifier_topic": "downloads"
+    },
+    {
+      "review_id": "3aebb117-86dd-4610-9d1f-157e9e82ccca",
+      "original_topic": "billing",
+      "planted_topic": "support",
+      "verifier_topic": "billing"
+    }
+  ]
+}

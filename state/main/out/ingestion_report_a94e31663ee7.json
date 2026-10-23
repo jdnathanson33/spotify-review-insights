@@ -1,0 +1,112 @@
+{
+  "counts": {
+    "distinct_nonempty_texts": 479,
+    "duplicate_review_ids": 0,
+    "empty_review_text": 0,
+    "invalid_rating": 0,
+    "missing_app_version": 108,
+    "nonempty_to_classify": 500,
+    "records": 500,
+    "repeated_text_groups": 11,
+    "reuse_savings_rows": 21,
+    "reviews_with_repeated_text": 32,
+    "unique_review_ids": 500
+  },
+  "first_review": "2022-05-19 14:22:29",
+  "ingested_at": "2026-10-22T17:47:31-0700",
+  "input_bytes": 76170,
+  "input_path": "data/checkpoint_500.csv",
+  "input_sha256": "a94e31663ee7b7eaa77e23b7a8425b530cc0c866ed5e714953172a0afef6a12f",
+  "last_review": "2023-11-15 15:44:48",
+  "quarantine_rule": "Empty/whitespace-only review_text -> status quarantined, reason empty_review_text. Missing app_version is kept and classified.",
+  "reviews_by_month": {
+    "2022-05": 14,
+    "2022-06": 19,
+    "2022-07": 21,
+    "2022-08": 31,
+    "2022-09": 22,
+    "2022-10": 18,
+    "2022-11": 18,
+    "2022-12": 21,
+    "2023-01": 17,
+    "2023-02": 23,
+    "2023-03": 20,
+    "2023-04": 21,
+    "2023-05": 22,
+    "2023-06": 19,
+    "2023-07": 56,
+    "2023-08": 26,
+    "2023-09": 25,
+    "2023-10": 79,
+    "2023-11": 28
+  },
+  "reviews_by_rating": {
+    "1": 187,
+    "2": 33,
+    "3": 19,
+    "4": 45,
+    "5": 216
+  },
+  "top_repeated_texts": [
+    {
+      "n": 7,
+      "text": "Good"
+    },
+    {
+      "n": 4,
+      "text": "Great"
+    },
+    {
+      "n": 3,
+      "text": "Worst app"
+    },
+    {
+      "n": 3,
+      "text": "Excellent"
+    },
+    {
+      "n": 3,
+      "text": "Nice"
+    },
+    {
+      "n": 2,
+      "text": "Love it"
+    },
+    {
+      "n": 2,
+      "text": "Op"
+    },
+    {
+      "n": 2,
+      "text": "Superb"
+    },
+    {
+      "n": 2,
+      "text": "Hate this application"
+    },
+    {
+      "n": 2,
+      "text": "Very good"
+    },
+    {
+      "n": 2,
+      "text": "Awesome"
+    },
+    {
+      "n": 1,
+      "text": "Thik thak hi hai"
+    },
+    {
+      "n": 1,
+      "text": "Good at all"
+    },
+    {
+      "n": 1,
+      "text": "You can't even listen to music you want it just shuffles it, like what the hell? This app is killing it self and forcing you to pay premium for basic things like just listening to music."
+    },
+    {
+      "n": 1,
+      "text": "This was fine till the last update, now you can't even pick a certain song without Spotify premium, and now you can only skip 6 songs, like please just let the songs fit my mood!"
+    }
+  ]
+}

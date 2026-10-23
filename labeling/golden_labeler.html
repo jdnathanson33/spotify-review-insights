@@ -1,0 +1,112 @@
+<title>Golden 50 Labeling</title>
+<style>
+:root{--bg:#f7f6f3;--card:#fff;--ink:#1d1d1b;--muted:#6b6a65;--line:#e2e0da;--accent:#1f7a4d;--warn:#b54708;--chip:#eef3ef}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#161615;--card:#21211f;--ink:#ecebe6;--muted:#a3a29b;--line:#383733;--accent:#4fbf86;--warn:#f5a25d;--chip:#24312a}}
+:root[data-theme="dark"]{--bg:#161615;--card:#21211f;--ink:#ecebe6;--muted:#a3a29b;--line:#383733;--accent:#4fbf86;--warn:#f5a25d;--chip:#24312a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+header{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding:12px 16px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+h1{font-size:17px;margin:0;flex:1}
+.prog{font-variant-numeric:tabular-nums;color:var(--muted)}
+.bar{height:6px;width:160px;background:var(--line);border-radius:3px;overflow:hidden}.bar>i{display:block;height:100%;background:var(--accent);width:0}
+main{max-width:860px;margin:0 auto;padding:16px}
+details.defs{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin-bottom:16px}
+details.defs summary{cursor:pointer;font-weight:600}
+.defs table{border-collapse:collapse;width:100%;font-size:13.5px;margin:8px 0}
+.defs td{border-top:1px solid var(--line);padding:4px 6px;vertical-align:top}.defs td:first-child{font-weight:600;white-space:nowrap}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;margin-bottom:14px}
+.card.done{border-left:4px solid var(--accent)}
+.num{color:var(--muted);font-size:12.5px}
+.text{white-space:pre-wrap;font-size:16px;margin:6px 0 12px;padding:10px;background:var(--chip);border-radius:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+label{display:block;font-size:12.5px;color:var(--muted)}
+select,input,textarea{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:6px}
+textarea{min-height:52px;resize:vertical}
+.row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:10px}
+.row label{display:flex;gap:6px;align-items:center;color:var(--ink);font-size:14px}
+.row input[type=checkbox]{width:auto}
+.warn{color:var(--warn);font-size:12.5px;min-height:1em}
+button{font:inherit;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:6px;padding:4px 10px;cursor:pointer}
+.status{font-size:12.5px;color:var(--muted)}
+.full{grid-column:1/-1}
+</style>
+<header><h1>Golden 50 — hand labels</h1><div class="bar"><i id="bar"></i></div><span class="prog" id="prog">0 / 50</span><span class="status" id="conn">connecting…</span></header>
+<main>
+<details class="defs" open><summary>Shared definitions (from GRADING_CONTRACT.md)</summary>
+<table>
+<tr><td>access</td><td>Login, signup, password or account access</td></tr>
+<tr><td>usability</td><td>Navigation, controls, layout, queue/playlist management, ad interruptions</td></tr>
+<tr><td>playback</td><td>Playback failure, crashes, lag, connection failures, audio quality, resource use</td></tr>
+<tr><td>downloads</td><td>Downloading, saved music, offline listening, disappearing downloads</td></tr>
+<tr><td>catalog</td><td>Missing songs/artists, search/discovery, recommendations, lyrics availability</td></tr>
+<tr><td>billing</td><td>Price, charges, subscriptions, paywalls, premium entitlement; explicitly premium-only controls go here</td></tr>
+<tr><td>support</td><td>Contacting support and the support response</td></tr>
+<tr><td>other</td><td>General praise/criticism, unrelated content, or no supported specific topic</td></tr>
+</table>
+<p><b>Topic:</b> pick the problem with the highest severity; on a tie, the first one mentioned. For praise, use the first specific praised feature; general praise → <i>other</i>. A paid-plan mention alone ≠ billing.</p>
+<p><b>Intent precedence:</b> cancellation (explicitly leaving / uninstalling / cancelling / threatening to) → complaint (incl. mixed) → request → praise → unclear. Bare boycott slogans / meaningless text → unclear, unless a product complaint or personal departure is stated.</p>
+<table>
+<tr><td>1</td><td>No reported problem: praise, neutral/unclear, pure feature request</td></tr>
+<tr><td>2</td><td>Dislike, generic criticism, minor annoyance, cosmetic; no functional loss</td></tr>
+<tr><td>3</td><td>Degraded or restricted function; some use or workaround remains</td></tr>
+<tr><td>4</td><td>Clearly blocked core task (can't log in, can't play music)</td></tr>
+<tr><td>5</td><td>Explicit serious financial, privacy or data harm (a crash or angry words alone are not enough)</td></tr>
+</table>
+<p>Ignore the star rating — label the text. <b>Evidence quote</b> must be copied exactly from the review (“Use full text” fills it). Tick <b>ambiguous</b> if more than one label is defensible and note the alternative.</p>
+</details>
+<div id="list"></div>
+</main>
+<script>
+const ROWS = [{"id": "292ce26a-815d-4bce-a3b6-93cb6c9e7e2c", "text": "Staff must be full of mentally ill kool-aid heads. Banning conservative music that speaks truth. Spotify is doing all they can to protect pedophiles, by banning Christian songs discussing the path the devil leads you down. Pride is a sin."}, {"id": "a70e8d3e-3f84-46bc-b008-67f476c67963", "text": "Great app use it every chance I get"}, {"id": "0d4f8b48-74c1-4e2a-89b5-11eaa737027e", "text": "It's really an amazing experience with Spotify...I love it🥰"}, {"id": "991b6b3a-f511-458a-a5b7-234f78048fb5", "text": "Ads were okay, but limited functionality..it's just too much"}, {"id": "599a0d41-989a-40ef-8ed2-e92db76eea46", "text": "I just loved it"}, {"id": "0c6ca545-3f89-4da6-b3db-1a352371fb6e", "text": "Hate this application 🤮🤮🤮🤮🤮🤮"}, {"id": "111f9048-f7bd-4be0-813e-76b8fc49f73f", "text": "Excellent"}, {"id": "b567f70c-edba-4922-ac2a-e945e5eb3472", "text": "good ❤❤🔊🔊"}, {"id": "b5ee7834-a0eb-4c15-9c7b-935831021922", "text": "Spotify is awesome and and very diverse :)"}, {"id": "1fc8b08f-7d6a-472f-b317-8ceb28d00f22", "text": "Duo Premium .... No ads at all!"}, {"id": "947821dc-b356-45dc-a0bc-1903728fad40", "text": "Very good but wen I play my song it o ly plays a little bit then it stops I updated my phone and it worked but it happend again they need to fix this issue"}, {"id": "723f07de-9881-4049-8680-1a9e25652914", "text": "Update: I reached out to Spotify Support and with some help from Sarah I was able to get the app working again. Old Post:Normally, the app works great, and I use it constantly. I tried to open it today, and it keeps crashing every time. I've tried uninstalling and reinstalling, and updating. Nothing seems to work unfortunately."}, {"id": "47428620-ec21-424d-a515-0b0b0012a5cf", "text": "This app is bad work"}, {"id": "fc344263-308d-48a1-9715-c380d063b6de", "text": "Great..."}, {"id": "6112667b-3d71-475c-b1a4-159b87f73d2b", "text": "Super"}, {"id": "01d453b0-dca3-42e9-8aa4-5fc167b08070", "text": "I like it but god I hate it when the music Interrupts my ads"}, {"id": "ac6cd66d-a9d2-42a4-afb8-2f84beff7fd1", "text": "Lhat ng song nasa spotify"}, {"id": "44129679-31a0-4108-9314-086a3456f6ae", "text": "Avtar sungh"}, {"id": "46842184-32f8-4088-ac15-2a700a7e94ed", "text": "asem, lirik nya kdang gaada kek mana??"}, {"id": "657f1b77-0183-4b06-bf48-5e6d9ab08f9a", "text": "Hate This application 👎"}, {"id": "5de7f95b-ccad-41b2-9f63-a13f7c1d9f09", "text": "We are boycotting Swedish app in our protest against Sweden for their desrecpect & desceration of our holy book Qur'an"}, {"id": "de48c99b-46fe-4837-8634-e63dbc72a5ea", "text": "I LOVE that I was able to put in only a few songs I like and Spotify gave me recommendations for an AWESOME Playlist...!!!"}, {"id": "aa573851-0b86-4b1b-adf6-210268c08d2a", "text": "I absolutely love Spotify, to me is one of the best Music Apps. Great job Spotify!!!"}, {"id": "372d4e67-59cc-4c54-879f-3e8a202ee554", "text": "Please ye ads ko thoda kumm Karo harr ek song ke baad ad 🙏🙄"}, {"id": "47f1406d-4918-4d60-9647-5ca8e610caca", "text": "Very poor updates as we cannot playback the songs and most bad updates are happening it is affecting the spotify quality"}, {"id": "82780cbe-6435-4efb-84f6-8e5fa47ffc3a", "text": "Awesomeness 👌 👏 👍 😍 💖"}, {"id": "36609c5c-fe48-4459-86b8-cc78fd3c77cd", "text": "Bheekhmangon"}, {"id": "f4c8146a-d5c8-4168-b00e-21af666afc6a", "text": "Unconditional love, Stoli Canales"}, {"id": "3ddb3f4e-f7b9-430b-b335-eadc6d321f46", "text": "Deleting this App. The new update suck, we can't choose our fvrt songs after some clicks, we can't CHOOSE song after a song played, and we can't turn off shuffle option. They are pushing us to upgrade to Premium subscription. No wonder if you guys loose ratings and users. Anyway i am deleting this app after years of using."}, {"id": "16d640e9-b281-4746-9562-c7dbcf7126b6", "text": "It's my best music app but now it's not...everything basic features is premium...."}, {"id": "8cc4fad4-26ec-47b7-96e8-49c7da714eca", "text": "I hate this app and sweden .I love islam"}, {"id": "215463ae-95b7-4481-8747-1754b68f31fa", "text": "What is happening with Spotify?? Recently I'm trying to play a song but it doesn't working. So I unstalled and thn again install it now I can't even open the app.. Just showing try again?? I really loved Spotify but this making me to rate it 1 star plz fix the problm as fast as u can"}, {"id": "46c0b49f-83a1-427e-8f0b-cef62e3c94b5", "text": "Are you out of your mind? This is dangerous! Listening to music in a normal volume and suddenly an add starts and my ears feel like they explode!! Stop this BS, or you're gonna destroy someones ears."}, {"id": "283b5843-a992-464f-b1dc-9dc7281ff390", "text": "Beth, we all got to give me a free dollar to go with 3 months, bro I can't be like"}, {"id": "1d15724a-98ff-400a-8083-0d9afc801098", "text": "Good"}, {"id": "89ea724c-358f-48ab-9516-cd130d21c471", "text": "Good app!"}, {"id": "2aa566c6-b98d-4513-b900-83702a8db8eb", "text": "Nice app, very less advertising"}, {"id": "8c0546b0-ce43-4a36-9d33-9f979e98d522", "text": "1-Lyrics not getting loaded, 2-can't go back to or start song where to wanted. Pathetic update"}, {"id": "a972945c-6601-4108-882a-afe986866a7b", "text": "Phenomenal"}, {"id": "8fd3dd72-5535-40f6-8779-1bd60892131e", "text": "Good"}, {"id": "b58dd6f0-ad88-4319-b6db-58afb60c37c1", "text": "The only thing Spotify lacks is the ability to organize saved \nalbums/artists into collections. Would definitely deserve 5 stars if it \nincluded this feature."}, {"id": "1a41c7e1-a655-4c63-b4db-c22bdff18003", "text": "Worst application 👎👎👎"}, {"id": "dceb14e7-2df0-422f-bb2b-73d7c373159a", "text": "I gave one star because I can't give any less than that. the new update is sooooooo annoying like I can't even play the songs that I like and I can't rewind songs what the heck"}, {"id": "5fba12ea-4980-4f25-a129-f830a3974fd2", "text": "I find Spotify very good, it finds and play whatever music you want and also adds songs that you might like, judging from your playlist if you choose to arrange one. 😊💃🎸🎶"}, {"id": "ac4e860a-c042-49cc-90f3-189591c336ac", "text": "paying for subscribing but unable to play in offline mode really?"}, {"id": "9034d675-9582-49b6-a1c1-c4ddabf8baf1", "text": "Worst app ever too much ad"}, {"id": "d2f3874f-d15d-4a2f-bb97-4f1213defa46", "text": "Too expensive and the free version is pretty much unusable with constant ads... Every two or three songs.. Forget it"}, {"id": "99b93e31-9f15-4daa-88ac-349ab0419c48", "text": "This update very bad for everyone.old Spotify. we all want."}, {"id": "ca63dfbe-7120-4e18-af6e-8ea786cd157d", "text": "I'm loving the experience with the app"}, {"id": "083811c7-d469-499b-9bef-5b9fb096653d", "text": "best app ever"}];
+const TOPICS=["","access","usability","playback","downloads","catalog","billing","support","other"];
+const INTENTS=["","cancellation","complaint","request","praise","unclear"];
+const state={}; let db=null; const timers={};
+const $=s=>document.querySelector(s);
+function isDone(v){return v&&v.topic&&v.intent&&v.severity&&v.sentiment!==""&&v.sentiment!=null&&v.evidence_quote}
+function progress(){const n=ROWS.filter(r=>isDone(state[r.id])).length;$("#prog").textContent=n+" / 50";$("#bar").style.width=(n*2)+"%";
+  ROWS.forEach(r=>{const c=document.getElementById("c-"+r.id);if(c)c.classList.toggle("done",!!isDone(state[r.id]))})}
+function opt(list,val){return list.map(x=>`<option value="${x}" ${x===val?"selected":""}>${x||"—"}</option>`).join("")}
+function render(){
+  $("#list").innerHTML=ROWS.map((r,i)=>{const v=state[r.id]||{};return `
+  <div class="card" id="c-${r.id}" data-id="${r.id}">
+    <div class="num">#${i+1} · ${r.id}</div>
+    <div class="text"></div>
+    <div class="grid">
+      <div><label>Topic</label><select data-f="topic">${opt(TOPICS,v.topic||"")}</select></div>
+      <div><label>Intent</label><select data-f="intent">${opt(INTENTS,v.intent||"")}</select></div>
+      <div><label>Severity</label><select data-f="severity">${opt(["","1","2","3","4","5"],v.severity?String(v.severity):"")}</select></div>
+      <div><label>Sentiment (−1 to 1)</label><input data-f="sentiment" type="number" min="-1" max="1" step="0.1" value="${v.sentiment??""}"></div>
+      <div class="full"><label>Evidence quote (exact substring) <button type="button" data-act="full">Use full text</button></label><textarea data-f="evidence_quote"></textarea><div class="warn" data-w></div></div>
+      <div><label>Entities (comma-separated, optional)</label><input data-f="entities" value=""></div>
+      <div><label>Note / alternative label</label><input data-f="note" value=""></div>
+    </div>
+    <div class="row"><label><input type="checkbox" data-f="needs_review" ${v.needs_review?"checked":""}> needs_review</label>
+    <label><input type="checkbox" data-f="ambiguous" ${v.ambiguous?"checked":""}> ambiguous</label></div>
+  </div>`}).join("");
+  ROWS.forEach(r=>{const c=document.getElementById("c-"+r.id),v=state[r.id]||{};
+    c.querySelector(".text").textContent=r.text;
+    c.querySelector('[data-f=evidence_quote]').value=v.evidence_quote||"";
+    c.querySelector('[data-f=entities]').value=(v.entities||[]).join(", ");
+    c.querySelector('[data-f=note]').value=v.note||"";check(c,r)});
+  progress();
+}
+function check(c,r){const q=c.querySelector('[data-f=evidence_quote]').value;c.querySelector("[data-w]").textContent=q&&!r.text.includes(q)?"Not an exact substring of the review — copy it exactly or use full text.":""}
+function read(c){const g=f=>c.querySelector(`[data-f=${f}]`);const s=g("sentiment").value;
+  return {topic:g("topic").value,intent:g("intent").value,severity:g("severity").value?Number(g("severity").value):null,
+  sentiment:s===""?null:Math.max(-1,Math.min(1,Number(s))),evidence_quote:g("evidence_quote").value,
+  entities:g("entities").value.split(",").map(x=>x.trim()).filter(Boolean),note:g("note").value,
+  needs_review:g("needs_review").checked,ambiguous:g("ambiguous").checked}}
+function onChange(e){const c=e.target.closest(".card");if(!c)return;const id=c.dataset.id,r=ROWS.find(x=>x.id===id);
+  if(e.target.dataset.act==="full"){c.querySelector('[data-f=evidence_quote]').value=r.text}
+  check(c,r);state[id]=read(c);progress();
+  clearTimeout(timers[id]);timers[id]=setTimeout(()=>save(id),600)}
+async function save(id){if(!db)return;try{await db.collection("labels").doc(id).set({...state[id],review_id:id,saved_at:new Date().toISOString()});$("#conn").textContent="saved ✓"}
+  catch(e){$("#conn").textContent="save failed: "+(e.code||e.message)}}
+document.addEventListener("input",onChange);document.addEventListener("change",onChange);
+document.addEventListener("click",e=>{if(e.target.dataset.act)onChange(e)});
+render();
+(async()=>{try{db=await window.claude.use("db")}catch(e){db=null}
+  if(!db){$("#conn").textContent="not saving (open in Claude to save)";return}
+  try{const snap=await db.collection("labels").limit(100).get();snap.docs.forEach(d=>{state[d.id]=d.data()});render();$("#conn").textContent="saving to database"}
+  catch(e){$("#conn").textContent="load failed: "+(e.code||e.message)}})();
+</script>

@@ -1,0 +1,71 @@
+{
+  "args": {
+    "budget_usd": 0.5,
+    "cmd": "run",
+    "fallback_fraction": 0.0,
+    "input": "/home/claude/spotify-pipeline/evals/synthetic_injection.csv",
+    "max_batches": null,
+    "mock": false,
+    "otpm": 70000,
+    "phase": "initial",
+    "requeue_quarantined": false,
+    "run_id": "synthetic-injection-test",
+    "stages": "ingest,enrich",
+    "state": "/home/claude/spotify-pipeline/evals/injection_state",
+    "verify_fraction": 0.01,
+    "verify_max": 5000,
+    "verify_min": 20,
+    "workers": 1
+  },
+  "calls": {
+    "attempts": 2,
+    "cost_usd": 0.000691,
+    "failed": 0,
+    "input_tokens": 394,
+    "output_tokens": 507,
+    "succeeded": 2
+  },
+  "finished_at": "2026-10-22T18:16:07-0700",
+  "interrupted": false,
+  "label_config": "claude-haiku-5-5+effort-low+nothink+enrich-v2+schema-v1+entities-v1",
+  "ledger": {
+    "cap_usd": 0.5,
+    "reserved_usd": 0.0,
+    "spent_usd": 0.000691
+  },
+  "run_id": "synthetic-injection-test",
+  "stages": {
+    "enrich": {
+      "batches": 1,
+      "completed": 5,
+      "elapsed_s": 2.67,
+      "failed_batches": 0,
+      "fallback_items": 0,
+      "items_sent": 5,
+      "quarantined": 0,
+      "remaining_pending": 0,
+      "retried_items": 2,
+      "seconds": 2.673,
+      "stopped_reason": null
+    },
+    "ingest": {
+      "counts": {
+        "distinct_nonempty_texts": 5,
+        "duplicate_review_ids": 0,
+        "empty_review_text": 0,
+        "invalid_rating": 5,
+        "missing_app_version": 5,
+        "nonempty_to_classify": 5,
+        "records": 5,
+        "repeated_text_groups": 0,
+        "reuse_savings_rows": 0,
+        "reviews_with_repeated_text": 0,
+        "unique_review_ids": 5
+      },
+      "input_sha256": "951c0b5427d8a711a3f7919c071927b1596be69b47a3e677bc960eb3ffed569e",
+      "seconds": 0.003
+    }
+  },
+  "started_at": "2026-10-22T18:16:02-0700",
+  "wall_clock_s": 4.624
+}

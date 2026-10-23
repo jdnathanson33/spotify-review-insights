@@ -1,0 +1,13 @@
+provider,model,tier,item,unit,unit_size,price_usd,currency,source_url,checked_date
+anthropic,claude-haiku-5-5,standard (prompts <=100k tokens),input,tokens,1000000,0.10,USD,https://platform.claude.com/docs/en/about-claude/pricing,2026-10-22
+anthropic,claude-haiku-5-5,standard (prompts <=100k tokens),cache_write_5m,tokens,1000000,0.125,USD,https://platform.claude.com/docs/en/about-claude/pricing,2026-10-22
+anthropic,claude-haiku-5-5,standard (prompts <=100k tokens),cache_read,tokens,1000000,0.01,USD,https://platform.claude.com/docs/en/about-claude/pricing,2026-10-22
+anthropic,claude-haiku-5-5,standard (prompts <=100k tokens),output,tokens,1000000,0.50,USD,https://platform.claude.com/docs/en/about-claude/pricing,2026-10-22
+anthropic,claude-sonnet-5-5,standard,input,tokens,1000000,2.00,USD,https://platform.claude.com/docs/en/about-claude/pricing,2026-10-22
+anthropic,claude-sonnet-5-5,standard,cache_write_5m,tokens,1000000,2.50,USD,https://platform.claude.com/docs/en/about-claude/pricing,2026-10-22
+anthropic,claude-sonnet-5-5,standard,cache_read,tokens,1000000,0.10,USD,https://platform.claude.com/docs/en/about-claude/pricing,2026-10-22
+anthropic,claude-sonnet-5-5,standard,output,tokens,1000000,10.00,USD,https://platform.claude.com/docs/en/about-claude/pricing,2026-10-22
+anthropic,claude-haiku-5-5@batch,Message Batches API (50% off; stacks with prompt caching per batch-processing docs),input,tokens,1000000,0.05,USD,https://platform.claude.com/docs/en/about-claude/pricing,2026-10-22
+anthropic,claude-haiku-5-5@batch,Message Batches API (50% off; stacks with prompt caching per batch-processing docs),cache_write_5m,tokens,1000000,0.0625,USD,https://platform.claude.com/docs/en/build-with-claude/batch-processing,2026-10-22
+anthropic,claude-haiku-5-5@batch,Message Batches API (50% off; stacks with prompt caching per batch-processing docs),cache_read,tokens,1000000,0.005,USD,https://platform.claude.com/docs/en/build-with-claude/batch-processing,2026-10-22
+anthropic,claude-haiku-5-5@batch,Message Batches API (50% off; stacks with prompt caching per batch-processing docs),output,tokens,1000000,0.25,USD,https://platform.claude.com/docs/en/about-claude/pricing,2026-10-22

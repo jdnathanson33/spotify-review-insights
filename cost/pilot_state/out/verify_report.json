@@ -1,0 +1,102 @@
+{
+  "agreement": {
+    "intent": 0.9,
+    "severity": 0.9,
+    "topic": 0.9
+  },
+  "compared": 20,
+  "disagreement_rows": [
+    {
+      "enrich": {
+        "intent": "cancellation",
+        "severity": 3,
+        "topic": "usability"
+      },
+      "fields_disagree": [
+        "topic"
+      ],
+      "review_id": "9e5f9745-f8be-48d3-b9de-4d118507d94a",
+      "verify": {
+        "intent": "cancellation",
+        "severity": 3,
+        "topic": "playback"
+      }
+    },
+    {
+      "enrich": {
+        "intent": "complaint",
+        "severity": 4,
+        "topic": "downloads"
+      },
+      "fields_disagree": [
+        "severity"
+      ],
+      "review_id": "dcff57c6-abd6-413b-b255-aec3dc34fcbd",
+      "verify": {
+        "intent": "complaint",
+        "severity": 3,
+        "topic": "downloads"
+      }
+    },
+    {
+      "enrich": {
+        "intent": "cancellation",
+        "severity": 3,
+        "topic": "usability"
+      },
+      "fields_disagree": [
+        "topic"
+      ],
+      "review_id": "e16a4550-43e7-4ae1-b538-a65cc652c31b",
+      "verify": {
+        "intent": "cancellation",
+        "severity": 3,
+        "topic": "playback"
+      }
+    },
+    {
+      "enrich": {
+        "intent": "praise",
+        "severity": 1,
+        "topic": "other"
+      },
+      "fields_disagree": [
+        "intent"
+      ],
+      "review_id": "084077ee-f9be-446a-9935-9e58550d5153",
+      "verify": {
+        "intent": "unclear",
+        "severity": 1,
+        "topic": "other"
+      }
+    },
+    {
+      "enrich": {
+        "intent": "praise",
+        "severity": 1,
+        "topic": "catalog"
+      },
+      "fields_disagree": [
+        "intent",
+        "severity"
+      ],
+      "review_id": "1807cc68-ba99-4edc-b6f1-2a1478e69109",
+      "verify": {
+        "intent": "complaint",
+        "severity": 2,
+        "topic": "catalog"
+      }
+    }
+  ],
+  "disagreements": 5,
+  "new_calls": 0,
+  "sample_declared": {
+    "fraction": 0.2,
+    "max": 5000,
+    "min": 20,
+    "population_distinct_texts": 100,
+    "sampled": 20,
+    "seed": "verify-sample-v1"
+  },
+  "severity_mae": 0.1
+}

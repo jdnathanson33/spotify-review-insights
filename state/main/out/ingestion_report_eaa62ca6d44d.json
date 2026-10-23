@@ -1,0 +1,112 @@
+{
+  "counts": {
+    "distinct_nonempty_texts": 8448,
+    "duplicate_review_ids": 0,
+    "empty_review_text": 0,
+    "invalid_rating": 0,
+    "missing_app_version": 2447,
+    "nonempty_to_classify": 10000,
+    "records": 10000,
+    "repeated_text_groups": 287,
+    "reuse_savings_rows": 1552,
+    "reviews_with_repeated_text": 1839,
+    "unique_review_ids": 10000
+  },
+  "first_review": "2022-05-17 02:29:15",
+  "ingested_at": "2026-10-22T17:49:22-0700",
+  "input_bytes": 1477793,
+  "input_path": "data/analysis_10000.csv",
+  "input_sha256": "eaa62ca6d44d717302904a9c922e99b0b4584d174309cb45295ecbc2ba2a91b5",
+  "last_review": "2023-11-15 22:13:05",
+  "quarantine_rule": "Empty/whitespace-only review_text -> status quarantined, reason empty_review_text. Missing app_version is kept and classified.",
+  "reviews_by_month": {
+    "2022-05": 232,
+    "2022-06": 421,
+    "2022-07": 506,
+    "2022-08": 466,
+    "2022-09": 438,
+    "2022-10": 412,
+    "2022-11": 406,
+    "2022-12": 520,
+    "2023-01": 451,
+    "2023-02": 337,
+    "2023-03": 425,
+    "2023-04": 359,
+    "2023-05": 423,
+    "2023-06": 391,
+    "2023-07": 1246,
+    "2023-08": 459,
+    "2023-09": 625,
+    "2023-10": 1381,
+    "2023-11": 502
+  },
+  "reviews_by_rating": {
+    "1": 3685,
+    "2": 469,
+    "3": 498,
+    "4": 836,
+    "5": 4512
+  },
+  "top_repeated_texts": [
+    {
+      "n": 214,
+      "text": "Good"
+    },
+    {
+      "n": 79,
+      "text": "Nice"
+    },
+    {
+      "n": 60,
+      "text": "Great"
+    },
+    {
+      "n": 53,
+      "text": "Awesome"
+    },
+    {
+      "n": 48,
+      "text": "Love it"
+    },
+    {
+      "n": 48,
+      "text": "Excellent"
+    },
+    {
+      "n": 37,
+      "text": "Super"
+    },
+    {
+      "n": 34,
+      "text": "Worst app"
+    },
+    {
+      "n": 31,
+      "text": "Good app"
+    },
+    {
+      "n": 30,
+      "text": "Very good"
+    },
+    {
+      "n": 28,
+      "text": "Nice app"
+    },
+    {
+      "n": 24,
+      "text": "Best"
+    },
+    {
+      "n": 23,
+      "text": "Worst"
+    },
+    {
+      "n": 21,
+      "text": "Amazing"
+    },
+    {
+      "n": 21,
+      "text": "Very bad"
+    }
+  ]
+}

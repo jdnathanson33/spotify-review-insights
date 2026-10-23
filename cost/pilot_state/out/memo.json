@@ -1,0 +1,113 @@
+{
+  "config": "claude-sonnet-5-5+effort-low+adaptive+memo-v1",
+  "memo": {
+    "alternatives": [
+      {
+        "area": "usability",
+        "why_not_first": "Ads and UI redesign issues are individually lower-ranked (priority scores 15 and 7) and have lower severity than the top issue."
+      },
+      {
+        "area": "access",
+        "why_not_first": "Login failure is severe but has only 2 complaints, giving priority score 8."
+      },
+      {
+        "area": "playback",
+        "why_not_first": "Crash/won't-open has 2 complaints and priority score 8; it is a good small fix but not the biggest signal."
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "issue_id": "billing.premium_only_controls",
+        "metric": "complaint_count",
+        "value": "9"
+      },
+      {
+        "claim_id": "C2",
+        "issue_id": "billing.premium_only_controls",
+        "metric": "priority_score",
+        "value": "27"
+      },
+      {
+        "claim_id": "C3",
+        "issue_id": "billing.premium_only_controls",
+        "metric": "mean_severity",
+        "value": "3.000000"
+      },
+      {
+        "claim_id": "C4",
+        "issue_id": "access.login_failure",
+        "metric": "priority_score",
+        "value": "8"
+      },
+      {
+        "claim_id": "C5",
+        "issue_id": "playback.crash_or_wont_open",
+        "metric": "priority_score",
+        "value": "8"
+      },
+      {
+        "claim_id": "C6",
+        "issue_id": "access.login_failure",
+        "metric": "mean_severity",
+        "value": "4.000000"
+      },
+      {
+        "claim_id": "C7",
+        "issue_id": "usability.ads_frequency_volume",
+        "metric": "complaint_count",
+        "value": "7"
+      }
+    ],
+    "headline": "Spend the next quarter on the Premium-gating of basic playback controls (`billing.premium_only_controls`), the top-ranked issue, while treating the concentration of complaints in one month as a caution.",
+    "limitations": [
+      "Only 100 self-selected public reviews; 49 are complaint or cancellation records.",
+      "Cancellation language is expressed intent, not observed churn; no revenue or retention claims are made.",
+      "The window's first and last months are partial.",
+      "Complaints for the top issue cluster in 2023-10 (6 of its 9), so it may reflect a single update event rather than a sustained trend.",
+      "The second-ranked item, `other.generic_criticism`, is non-specific and not actionable.",
+      "Verification on 20 reviews showed 0.9 agreement on intent, severity and topic, with 5 disagreements.",
+      "Quarantined: 0; pending/unresolved: 0."
+    ],
+    "memo_markdown": "# Decision memo: next-quarter product focus\n\n**Recommendation: billing/support.** Focus on `billing.premium_only_controls`.\n\n## Why\nThis issue ranks first, with 9 complaints [C1], mean severity 3.000000 [C3] and a priority score of 27 [C2]. Reviewers say basic player features were removed or restricted: `7084ced1-0428-4093-9328-442f74719b4f` (\"they removed basic features of music player\") and `89a8e180-7846-4421-a2b6-fa7787e9d0d2` (\"Too much restrictions\"). Two of the 9 include cancellation language, which is expressed intent and not observed churn.\n\n## Parallel small fixes\n`access.login_failure` (priority score 8 [C4], mean severity 4.000000 [C6]) and `playback.crash_or_wont_open` (priority score 8 [C5]) are few in number but severe. Examples: `32fb340f-4f9f-4551-8dae-755221e58d6a` (cannot get into account) and `55cc3abf-c295-4591-8c3a-78085cfdefaa` (app crashes after update). They are good candidates for a low-cost fix alongside the main work.\n\n## Alternatives considered\n- **Usability:** `usability.ads_frequency_volume` has 7 complaints [C7] spread over many months; worth monitoring but lower severity.\n- **Access / playback:** severe but low volume.\n\n## Caveats\n- The sample is 100 self-selected public reviews, so this is directional only.\n- Most of the top issue's complaints fall in 2023-10, so it may reflect one update event rather than a sustained trend; verify whether it persists.\n- The second-ranked item, `other.generic_criticism`, is non-specific and not actionable.\n- A 20-review verification showed 0.9 agreement, with 5 disagreements.\n- No reviews were quarantined or left unresolved.\n- We make no revenue or retention claims.",
+    "priority_area": "billing/support",
+    "recommendations": [
+      {
+        "claim_ids": [
+          "C1",
+          "C2",
+          "C3"
+        ],
+        "detail": "`billing.premium_only_controls` ranks first with 9 complaints and a priority score of 27. Reviewers describe basic features removed or restricted (`7084ced1-0428-4093-9328-442f74719b4f`, `89a8e180-7846-4421-a2b6-fa7787e9d0d2`). Two of the 9 include cancellation language, which is expressed intent only.",
+        "issue_ids": [
+          "billing.premium_only_controls"
+        ],
+        "title": "Review and address Premium-gated basic controls"
+      },
+      {
+        "claim_ids": [
+          "C4",
+          "C5",
+          "C6"
+        ],
+        "detail": "`access.login_failure` and `playback.crash_or_wont_open` each have 2 complaints at mean severity 4.000000, and both have priority score 8. They are small but severe, so they suit a low-cost parallel fix.",
+        "issue_ids": [
+          "access.login_failure",
+          "playback.crash_or_wont_open"
+        ],
+        "title": "Fast-follow on high-severity access and crash defects"
+      },
+      {
+        "claim_ids": [
+          "C7"
+        ],
+        "detail": "`usability.ads_frequency_volume` is third with 7 complaints, spread across many months rather than concentrated.",
+        "issue_ids": [
+          "usability.ads_frequency_volume"
+        ],
+        "title": "Monitor ads"
+      }
+    ]
+  },
+  "validation_errors": []
+}

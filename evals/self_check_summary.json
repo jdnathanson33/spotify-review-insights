@@ -1,0 +1,49 @@
+{
+ "status": "review_required",
+ "working_coverage_point_candidate": 0.9999,
+ "coverage": {
+  "accounted_fraction": 1.0,
+  "duplicate_ids": 0,
+  "expected": 660622,
+  "invalid_or_unresolved": 0,
+  "labelable": 660609,
+  "labelable_completion_fraction": 0.999889,
+  "missing": 0,
+  "quarantined": 86,
+  "received_lines": 660622,
+  "unique_expected_ids": 660622,
+  "valid_cache_reuses": 176420,
+  "valid_completed": 660536,
+  "valid_completion_fraction": 0.99987
+ },
+ "issue_counts": {
+  "unfinished_classification": 1
+ },
+ "examples": [
+  {
+   "code": "unfinished_classification",
+   "detail": "73"
+  }
+ ],
+ "reported_calls": 10457,
+ "reported_input_tokens": 54108395,
+ "reported_output_tokens": 34399081,
+ "audit_script_sha256": "d60bd66d84922d934c65b3d42b2c7d36cc738e8c75e2d6f2b2f58bca3141c26d",
+ "input_files_sha256": {
+  "calls.jsonl.gz": "57787a702e67ae2091d2e95a697f3bc14b240d02e1abe7900c6946f3ec4f192f",
+  "checkpoint_after.json": "38a22f245be70d925fd9db2958f65e88e8fcf5f3876608e427c27e65f65d0069",
+  "checkpoint_before.json": "913f751f3a1498ca78550339d04d12661731d02c066398fa206df20c7c66ef2e",
+  "claims.csv": "39a1a2ac725a374cc2c8f8387c1c758494e258e564263028ce9c887580f54328",
+  "ingestion.json": "5512dd793b0bde3bd51f28b20b440108f3c9bab31233819bea5f32ce19482153",
+  "membership.csv": "95cd09d8e8b1970881cd2e018feb646e7ae150dfb8bb77e74c74771229bd12ce",
+  "ranking.csv": "4ea1025aacf98a286465d1ae83d6aaad5a85b265f7f669c0ebafa25d7363d6c4",
+  "records.jsonl.gz": "206293a2ba0461051c318c56d51588e146973d93a9b4ca640ec9251be90f6ced",
+  "run.json": "09bf8e059a1517c9fd5d01d2ab9f43731b5c8f0f9d51da89daa40288a574645e"
+ },
+ "limits": [
+  "Artifacts do not prove actual model execution, authorship, cost, or independent verification.",
+  "Exact quote membership does not prove that the quote supports the label.",
+  "Claims export checks numbers; a person must check that all memo claims are represented.",
+  "Benchmark agreement is diagnostic; final 4/3/3 grades require rubric review."
+ ]
+}

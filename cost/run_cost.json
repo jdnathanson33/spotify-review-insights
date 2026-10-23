@@ -1,0 +1,7 @@
+{
+ "total_usd": 10.9396,
+ "calls": 10458,
+ "input_tokens": 54108395,
+ "output_tokens": 34399081,
+ "note": "all runs incl. dev checkpoints; recomputed from saved usage"
+}

@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Spotify Review Insights</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
+<style>
+:root{color-scheme:light;--surface-0:#f4f3f0;--surface-1:#fcfcfb;--line:#e3e1db;--grid:#ecebe6;--text-primary:#0b0b0b;--text-secondary:#52514e;--text-muted:#7b7a74;
+--s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--s4:#eda100;--s5:#e87ba4;--seq:#2a78d6;--focus:#2a78d6;--warn-bg:#fff4e0;--ok-bg:#e8f5ee}
+@media (prefers-color-scheme:dark){:root:where(:not([data-theme="light"])){color-scheme:dark;--surface-0:#121211;--surface-1:#1a1a19;--line:#33322f;--grid:#2a2a28;--text-primary:#f0efec;--text-secondary:#c3c2b7;--text-muted:#94938b;
+--s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500;--s5:#d55181;--seq:#3987e5;--warn-bg:#3a2a12;--ok-bg:#153024}}
+:root[data-theme="dark"]{color-scheme:dark;--surface-0:#121211;--surface-1:#1a1a19;--line:#33322f;--grid:#2a2a28;--text-primary:#f0efec;--text-secondary:#c3c2b7;--text-muted:#94938b;
+--s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500;--s5:#d55181;--seq:#3987e5;--warn-bg:#3a2a12;--ok-bg:#153024}
+*{box-sizing:border-box}
+body{margin:0;background:var(--surface-0);color:var(--text-primary);font:15px/1.5 Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+header{padding:28px 16px 8px;max-width:1180px;margin:0 auto}
+h1{font-size:26px;margin:0 0 4px;letter-spacing:-.01em}
+.sub{color:var(--text-secondary);margin:0}
+main{max-width:1180px;margin:0 auto;padding:8px 16px 48px;display:grid;gap:16px}
+.card{background:var(--surface-1);border:1px solid var(--line);border-radius:12px;padding:18px}
+.card h2{font-size:16px;margin:0 0 4px}.card .note{color:var(--text-muted);font-size:13px;margin:0 0 12px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.tile{background:var(--surface-1);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.tile .v{font-size:28px;font-weight:650;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.tile .k{color:var(--text-secondary);font-size:13px}.tile .d{color:var(--text-muted);font-size:12px}
+.grid2{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:16px}
+@media (max-width:860px){.grid2{grid-template-columns:1fr}}
+.rec-head{font-size:19px;font-weight:600;margin:4px 0 10px}
+.pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:1px 9px;font-size:12px;color:var(--text-secondary);margin:2px 4px 2px 0;background:var(--surface-0)}
+.pill.claim{cursor:help}
+.recs{display:grid;gap:10px;margin:8px 0}
+.rec{border-left:3px solid var(--s1);padding:2px 0 2px 12px}
+.rec b{display:block}
+.valid{font-size:13px;padding:8px 10px;border-radius:8px;margin-top:10px}
+.valid.ok{background:var(--ok-bg)}.valid.bad{background:var(--warn-bg)}
+details summary{cursor:pointer;color:var(--text-secondary);font-size:14px;margin-top:8px}
+.memo{font-size:14.5px}.memo code{font-size:12.5px;background:var(--surface-0);padding:1px 4px;border-radius:4px}
+.memo table{border-collapse:collapse;font-size:13px}.memo td,.memo th{border:1px solid var(--line);padding:3px 6px}
+svg text{fill:var(--text-secondary);font-size:12px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--text-secondary);margin-bottom:6px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.tip{position:fixed;pointer-events:none;background:var(--surface-1);border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:12.5px;box-shadow:0 4px 18px rgba(0,0,0,.12);display:none;max-width:280px;z-index:10;color:var(--text-primary)}
+table.data{width:100%;border-collapse:collapse;font-size:13.5px}
+table.data th{text-align:left;color:var(--text-muted);font-weight:500;border-bottom:1px solid var(--line);padding:6px 6px}
+table.data td{border-bottom:1px solid var(--grid);padding:7px 6px;vertical-align:top;font-variant-numeric:tabular-nums}
+table.data tr.sel{background:var(--surface-0)}
+table.data tbody tr{cursor:pointer}
+.num{text-align:right}
+.scroll{overflow-x:auto}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--text-secondary)}
+.quote{font-size:14px}
+input[type=text]{font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--surface-0);color:var(--text-primary);width:100%;max-width:420px}
+button{font:inherit;padding:7px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface-0);color:var(--text-primary);cursor:pointer}
+button:focus-visible,input:focus-visible,tr:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+pre.trace{white-space:pre-wrap;font-size:12.5px;background:var(--surface-0);padding:10px;border-radius:8px;overflow:auto}
+.err{color:#c0392b}
+footer{max-width:1180px;margin:0 auto;padding:0 16px 32px;color:var(--text-muted);font-size:12.5px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Spotify Review Insights</h1>
+  <p class="sub">660,622 Google Play reviews (May 2022 – Nov 2023) → classified, verified, grouped and ranked. Where should next quarter's product effort go?</p>
+</header>
+<main>
+  <section class="tiles" id="tiles" aria-label="Overall metrics"></section>
+
+  <section class="card" id="rec" aria-label="AI-generated recommendations">
+    <h2>AI-generated recommendation</h2>
+    <p class="note">Written by the memo model from saved aggregates only; every cited number is a claim checked by code against the deterministic ranking.</p>
+    <div id="recBody">Loading…</div>
+  </section>
+
+  <section class="grid2">
+    <div class="card">
+      <h2>Priority by product area</h2>
+      <p class="note">Σ severity of complaint &amp; cancellation reviews (= priority score summed over each area's issues)</p>
+      <div id="areaChart"></div>
+    </div>
+    <div class="card">
+      <h2>Complaint share over time — top 3 issues</h2>
+      <p class="note">Issue complaints ÷ all complaints that month. First and last months are partial.</p>
+      <div id="trendLegend" class="legend"></div>
+      <div id="trendChart"></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Issue ranking (baseline)</h2>
+    <p class="note">priority = complaint_count × mean_severity = severity_sum; ties by issue_id. Click an issue for traceable evidence.</p>
+    <div id="rankLegend" class="legend"></div>
+    <div id="rankChart"></div>
+    <div class="scroll"><table class="data" id="rankTable"><thead><tr><th>#</th><th>Issue</th><th>Area</th><th class="num">Complaints</th><th class="num">Mean sev.</th><th class="num">Priority</th><th class="num">Cancel intent</th></tr></thead><tbody></tbody></table></div>
+  </section>
+
+  <section class="card" id="issueCard">
+    <h2 id="issueTitle">Issue evidence</h2>
+    <p class="note" id="issueNote">Select an issue above.</p>
+    <div class="scroll"><table class="data" id="evTable"><thead><tr><th>review_id</th><th>Evidence quote</th><th class="num">Sev.</th><th>Intent</th><th class="num">Helpful</th><th>Date</th></tr></thead><tbody></tbody></table></div>
+  </section>
+
+  <section class="card">
+    <h2>Trace a review</h2>
+    <p class="note">Look up any source review_id: its stored labels, quote, cache provenance and issue membership.</p>
+    <form id="traceForm"><input type="text" id="traceId" placeholder="review_id, e.g. from the evidence table" aria-label="review_id"> <button>Trace</button></form>
+    <pre class="trace" id="traceOut" hidden></pre>
+  </section>
+
+  <section class="card">
+    <h2>Run quality &amp; cost</h2>
+    <div id="quality"></div>
+  </section>
+</main>
+<footer>Backend: Vercel serverless API → Neon Postgres. Data: processed outputs of the pipeline (records, membership, ranking, memo, claims). No model calls are made by this page.</footer>
+<div class="tip" id="tip" role="tooltip"></div>
+<script>
+const AREA_COLORS={"billing/support":"var(--s1)","usability":"var(--s2)","playback":"var(--s3)","access":"var(--s4)","none":"var(--text-muted)"};
+const AREA_ORDER=["billing/support","usability","playback","access","none"];
+const $=s=>document.querySelector(s);
+const fmt=n=>Number(n).toLocaleString("en-US");
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const api=p=>fetch("/api/"+p).then(r=>{if(!r.ok)throw new Error(p+": "+r.status);return r.json()});
+const tip=$("#tip");
+function showTip(e,html){tip.innerHTML=html;tip.style.display="block";const x=Math.min(e.clientX+14,innerWidth-tip.offsetWidth-8),y=Math.min(e.clientY+14,innerHeight-tip.offsetHeight-8);tip.style.left=x+"px";tip.style.top=y+"px"}
+function hideTip(){tip.style.display="none"}
+function svgEl(w,h){const s=document.createElementNS("http://www.w3.org/2000/svg","svg");s.setAttribute("viewBox",`0 0 ${w} ${h}`);s.setAttribute("width","100%");s.style.display="block";return s}
+function add(p,tag,attrs,text){const e=document.createElementNS("http://www.w3.org/2000/svg",tag);for(const k in attrs)e.setAttribute(k,attrs[k]);if(text!=null)e.textContent=text;p.appendChild(e);return e}
+// Horizontal bar chart: rounded data-end, 2px gap between bars, value labels in text ink, hover tooltip
+function hbars(el,rows,{label,value,color,tipHtml,onClick,labelW=190}){
+  const W=el.clientWidth||600,bh=22,gap=8,h=rows.length*(bh+gap)+4,max=Math.max(...rows.map(value))||1,plotW=W-labelW-70;
+  const s=svgEl(W,h);
+  rows.forEach((r,i)=>{const y=i*(bh+gap)+2,w=Math.max(2,plotW*value(r)/max);
+    add(s,"text",{x:labelW-8,y:y+bh/2+4,"text-anchor":"end"},label(r).length>28?label(r).slice(0,27)+"…":label(r));
+    const g=add(s,"g",{});
+    const bar=add(g,"path",{d:`M${labelW},${y} h${w-4} a4,4 0 0 1 4,4 v${bh-8} a4,4 0 0 1 -4,4 h${-(w-4)} z`,fill:color(r)});
+    add(s,"text",{x:labelW+w+6,y:y+bh/2+4,style:"fill:var(--text-primary);font-variant-numeric:tabular-nums"},fmt(value(r)));
+    const hit=add(g,"rect",{x:0,y:y-gap/2,width:W,height:bh+gap,fill:"transparent",style:onClick?"cursor:pointer":""});
+    hit.addEventListener("mousemove",e=>{bar.style.opacity=.85;showTip(e,tipHtml(r))});hit.addEventListener("mouseleave",()=>{bar.style.opacity=1;hideTip()});
+    if(onClick)hit.addEventListener("click",()=>onClick(r));});
+  el.innerHTML="";el.appendChild(s)}
+function lineChart(el,months,series){
+  const W=el.clientWidth||520,H=240,L=40,R=12,T=10,B=28,pw=W-L-R,ph=H-T-B;
+  const max=Math.max(.05,...series.flatMap(s=>s.values.map(v=>v??0)));const yMax=Math.ceil(max*20)/20;
+  const s=svgEl(W,H);const x=i=>L+pw*i/(months.length-1||1),y=v=>T+ph*(1-v/yMax);
+  for(let k=0;k<=4;k++){const v=yMax*k/4;add(s,"line",{x1:L,x2:W-R,y1:y(v),y2:y(v),stroke:"var(--grid)"});add(s,"text",{x:L-6,y:y(v)+4,"text-anchor":"end"},Math.round(v*100)+"%")}
+  months.forEach((m,i)=>{if(i%3===0||i===months.length-1)add(s,"text",{x:x(i),y:H-8,"text-anchor":"middle"},m.slice(2))});
+  series.forEach(se=>{const d=se.values.map((v,i)=>`${i?"L":"M"}${x(i)},${y(v||0)}`).join("");add(s,"path",{d,fill:"none",stroke:se.color,"stroke-width":2,"stroke-linejoin":"round"})});
+  const cross=add(s,"line",{y1:T,y2:T+ph,stroke:"var(--text-muted)","stroke-dasharray":"3 3",visibility:"hidden"});
+  const dots=series.map(se=>add(s,"circle",{r:4.5,fill:se.color,stroke:"var(--surface-1)","stroke-width":2,visibility:"hidden"}));
+  const hit=add(s,"rect",{x:L,y:T,width:pw,height:ph,fill:"transparent"});
+  hit.addEventListener("mousemove",e=>{const b=s.getBoundingClientRect();const px=(e.clientX-b.left)*W/b.width;const i=Math.max(0,Math.min(months.length-1,Math.round((px-L)/pw*(months.length-1))));
+    cross.setAttribute("x1",x(i));cross.setAttribute("x2",x(i));cross.setAttribute("visibility","visible");
+    dots.forEach((d,k)=>{d.setAttribute("cx",x(i));d.setAttribute("cy",y(series[k].values[i]||0));d.setAttribute("visibility","visible")});
+    showTip(e,`<b>${months[i]}</b><br>`+series.map(se=>`<i style="display:inline-block;width:8px;height:8px;background:${se.color};border-radius:2px"></i> ${esc(se.name)}: ${(100*(se.values[i]||0)).toFixed(1)}% <span style="color:var(--text-muted)">(${fmt(se.counts[i])} of ${fmt(se.totals[i])})</span>`).join("<br>"))});
+  hit.addEventListener("mouseleave",()=>{cross.setAttribute("visibility","hidden");dots.forEach(d=>d.setAttribute("visibility","hidden"));hideTip()});
+  el.innerHTML="";el.appendChild(s)}
+function legend(el,items){el.innerHTML=items.map(([n,c])=>`<span><i style="background:${c}"></i>${esc(n)}</span>`).join("")}
+
+let ISSUES=[];
+async function init(){
+  try{
+    const [ov,rank,rec]=await Promise.all([api("overview"),api("ranking"),api("recommendations")]);
+    ISSUES=rank;renderTiles(ov,rank);renderRec(rec);renderAreas(ov,rank);renderRank(rank);renderQuality(ov);
+    const top3=rank.slice(0,3);const ms=await Promise.all(top3.map(i=>api("issue?id="+encodeURIComponent(i.issue_id)+"&limit=1")));
+    const months=ms[0].monthly.map(m=>m.month);const cols=["var(--s1)","var(--s2)","var(--s3)"];
+    const series=top3.map((iss,k)=>({name:iss.name,color:cols[k],values:ms[k].monthly.map(m=>m.all_complaints?m.issue_complaints/m.all_complaints:0),counts:ms[k].monthly.map(m=>m.issue_complaints),totals:ms[k].monthly.map(m=>m.all_complaints)}));
+    legend($("#trendLegend"),series.map(s=>[s.name,s.color]));lineChart($("#trendChart"),months,series);
+    selectIssue(rank[0].issue_id);
+  }catch(e){document.querySelector("main").insertAdjacentHTML("afterbegin",`<p class="err">Could not load data: ${esc(e.message)}</p>`)}
+}
+function renderTiles(ov,rank){
+  const st=ov.status_counts||{},tot=(st.completed||0)+(st.quarantined||0),cmp=rank.reduce((a,r)=>a+r.complaint_count,0);
+  const cost=ov.run_cost||{};
+  const t=[["Reviews accounted for",fmt(tot),"of 660,622 source IDs"],["Classified (completed)",fmt(st.completed||0),((st.completed||0)/660609*100).toFixed(2)+"% of 660,609 nonempty"],
+   ["Quarantined",fmt(st.quarantined||0),"incl. 13 empty texts"],["Complaint & cancellation",fmt(cmp),"members of "+rank.length+" ranked issues"],
+   ["Top issue",rank[0]?.name||"—","priority "+fmt(rank[0]?.priority_score||0)],["API spend (all runs)",cost.total_usd!=null?"$"+Number(cost.total_usd).toFixed(2):"—",cost.note||"from saved call log"]];
+  $("#tiles").innerHTML=t.map(([k,v,d])=>`<div class="tile"><div class="k">${esc(k)}</div><div class="v">${esc(v)}</div><div class="d">${esc(d)}</div></div>`).join("")}
+function renderRec(r){
+  if(!r||!r.headline){$("#recBody").textContent="No recommendation stored.";return}
+  const claims=Object.fromEntries((r.claims||[]).map(c=>[c.claim_id,c]));const b=r.body||{};
+  const chip=id=>{const c=claims[id];return c?`<span class="pill claim" title="${esc(c.issue_id)} · ${esc(c.metric)} = ${esc(c.value)}">${esc(id)}: ${esc(c.metric.replace("_"," "))} ${esc(c.value)}</span>`:`<span class="pill">${esc(id)}</span>`};
+  const errs=r.validation_errors||[];
+  $("#recBody").innerHTML=`<span class="pill">Priority area: <b>${esc(r.priority_area)}</b></span><div class="rec-head">${esc(r.headline)}</div>
+   <div class="recs">${(b.recommendations||[]).map(x=>`<div class="rec"><b>${esc(x.title)}</b>${esc(x.detail)}<div>${(x.issue_ids||[]).map(i=>`<span class="pill">${esc(i)}</span>`).join("")}${(x.claim_ids||[]).map(chip).join("")}</div></div>`).join("")}</div>
+   <details><summary>Alternatives considered &amp; limitations</summary><ul>${(b.alternatives||[]).map(a=>`<li><b>${esc(a.area)}</b> — ${esc(a.why_not_first)}</li>`).join("")}</ul><ul>${(b.limitations||[]).map(l=>`<li>${esc(l)}</li>`).join("")}</ul></details>
+   <details><summary>Full decision memo</summary><div class="memo">${DOMPurify.sanitize(marked.parse(r.memo_markdown||""))}</div></details>
+   <div class="valid ${errs.length?"bad":"ok"}">${errs.length?"Validation issues: "+errs.map(esc).join("; "):"✓ Automated validation passed: "+(r.claims||[]).length+" claims match ranking.csv; cited IDs are in the evidence pack."} <span class="mono">${esc(r.model)}</span></div>`}
+function renderAreas(ov,rank){
+  const by={};rank.forEach(r=>{const a=by[r.area]||(by[r.area]={area:r.area,sev:0,n:0,c:0});a.sev+=r.severity_sum;a.n+=r.complaint_count;a.c+=r.cancellation_count});
+  const rows=Object.values(by).sort((a,b)=>b.sev-a.sev);
+  hbars($("#areaChart"),rows,{label:r=>r.area,value:r=>r.sev,color:r=>"var(--seq)",labelW:120,
+    tipHtml:r=>`<b>${esc(r.area)}</b><br>Σ severity ${fmt(r.sev)}<br>${fmt(r.n)} complaint/cancellation reviews<br>${fmt(r.c)} with cancellation intent`})}
+function renderRank(rank){
+  const top=rank.slice(0,15);const areas=AREA_ORDER.filter(a=>top.some(r=>r.area===a));
+  legend($("#rankLegend"),areas.map(a=>[a,AREA_COLORS[a]]));
+  hbars($("#rankChart"),top,{label:r=>r.name,value:r=>r.priority_score,color:r=>AREA_COLORS[r.area],onClick:r=>selectIssue(r.issue_id),
+    tipHtml:r=>`<b>#${r.rank} ${esc(r.name)}</b><br><span class="mono">${esc(r.issue_id)}</span><br>${fmt(r.complaint_count)} complaints × mean severity ${r.mean_severity}<br>= priority ${fmt(r.priority_score)}`});
+  $("#rankTable tbody").innerHTML=rank.map(r=>`<tr tabindex="0" data-id="${esc(r.issue_id)}"><td>${r.rank}</td><td><b>${esc(r.name)}</b><br><span class="mono">${esc(r.issue_id)}</span></td><td>${esc(r.area)}</td><td class="num">${fmt(r.complaint_count)}</td><td class="num">${r.mean_severity}</td><td class="num">${fmt(r.priority_score)}</td><td class="num">${fmt(r.cancellation_count)}</td></tr>`).join("");
+  $("#rankTable tbody").onclick=e=>{const tr=e.target.closest("tr");if(tr)selectIssue(tr.dataset.id)};
+  $("#rankTable tbody").onkeydown=e=>{if(e.key==="Enter"){const tr=e.target.closest("tr");if(tr)selectIssue(tr.dataset.id)}}}
+async function selectIssue(id){
+  document.querySelectorAll("#rankTable tr").forEach(tr=>tr.classList.toggle("sel",tr.dataset.id===id));
+  const d=await api("issue?id="+encodeURIComponent(id)+"&limit=25");const i=d.issue;
+  $("#issueTitle").textContent=`#${i.rank} ${i.name}`;
+  $("#issueNote").innerHTML=`<span class="mono">${esc(i.issue_id)}</span> · ${esc(i.summary)} · ${fmt(i.complaint_count)} reviews, Σ severity ${fmt(i.severity_sum)}, ${fmt(i.severity_4plus)} at severity ≥4. Showing the 25 most helpful-voted members.`;
+  $("#evTable tbody").innerHTML=d.evidence.map(r=>`<tr data-id="${esc(r.review_id)}"><td class="mono">${esc(r.review_id)}${r.cache_source_id?"<br>↳ cached from "+esc(r.cache_source_id.slice(0,8)):""}</td><td class="quote">“${esc(r.evidence_quote)}”</td><td class="num">${r.severity}</td><td>${esc(r.intent)}</td><td class="num">${fmt(r.likes)}</td><td>${esc((r.review_ts||"").slice(0,10))}</td></tr>`).join("");
+  $("#evTable tbody").onclick=e=>{const tr=e.target.closest("tr");if(tr){$("#traceId").value=tr.dataset.id;trace(tr.dataset.id)}}}
+async function trace(id){const o=$("#traceOut");o.hidden=false;o.textContent="Loading…";
+  try{const r=await api("review?id="+encodeURIComponent(id.trim()));const iss=ISSUES.find(i=>i.issue_id===r.issue_id);
+    o.textContent=JSON.stringify(r,null,2)+(iss?`\n\n→ issue ${iss.issue_id} (rank ${iss.rank}, priority ${iss.priority_score} = ${iss.complaint_count} × ${iss.mean_severity})`:"\n\n→ not in a complaint issue (praise/request/unclear or quarantined)")}
+  catch(e){o.textContent="Not found: "+id}}
+$("#traceForm").addEventListener("submit",e=>{e.preventDefault();trace($("#traceId").value)});
+function renderQuality(ov){
+  const v=ov.verification||{},g=ov.golden||{},rs=ov.run_cost||{};
+  const rows=[["Independent verifier sample",v.compared!=null?`${fmt(v.compared)} texts · agreement topic ${(v.agreement?.topic*100).toFixed(1)}%, intent ${(v.agreement?.intent*100).toFixed(1)}%, severity ${(v.agreement?.severity*100).toFixed(1)}% · ${fmt(v.disagreements)} disagreements`:"—"],
+   ["Golden 50 (Claude reference labels — AI-made, disclosed)",g.agreement?`topic ${(g.agreement.topic*100).toFixed(0)}%, intent ${(g.agreement.intent*100).toFixed(0)}%, severity exact ${(g.agreement.severity*100).toFixed(0)}% · severity MAE ${g.severity_mae}`:"—"],
+   ["Model calls / tokens",rs.calls!=null?`${fmt(rs.calls)} attempts · ${fmt(rs.input_tokens)} in / ${fmt(rs.output_tokens)} out tokens`:"—"],
+   ["Label config",`<span class="mono">${esc((ov.run_summary||{}).label_config||"")}</span>`]];
+  $("#quality").innerHTML=`<table class="data"><tbody>${rows.map(([k,v])=>`<tr><td style="width:220px;color:var(--text-secondary)">${k}</td><td>${v}</td></tr>`).join("")}</tbody></table>`}
+init();
+addEventListener("resize",()=>{clearTimeout(window._r);window._r=setTimeout(()=>{if(ISSUES.length){renderRank(ISSUES)}},200)});
+</script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+{
+  "input_sha256": "c884ac3b9be5066995d5063f96ad9af6e5e082975788c1684c4f6b6ea661dd0e",
+  "cold": {
+    "run_id": "pilot-cold-20261022T174617",
+    "wall_clock_s": 63.065,
+    "stages": {
+      "enrich": {
+        "batches": 2,
+        "completed": 100,
+        "elapsed_s": 19.91,
+        "failed_batches": 0,
+        "fallback_items": 0,
+        "items_sent": 100,
+        "quarantined": 0,
+        "remaining_pending": 0,
+        "retried_items": 0,
+        "seconds": 19.916,
+        "stopped_reason": null
+      },
+      "group": {
+        "calls": 4,
+        "issues": 19,
+        "seconds": 9.203
+      },
+      "ingest": {
+        "counts": {
+          "distinct_nonempty_texts": 100,
+          "duplicate_review_ids": 0,
+          "empty_review_text": 0,
+          "invalid_rating": 0,
+          "missing_app_version": 18,
+          "nonempty_to_classify": 100,
+          "records": 100,
+          "repeated_text_groups": 0,
+          "reuse_savings_rows": 0,
+          "reviews_with_repeated_text": 0,
+          "unique_review_ids": 100
+        },
+        "input_sha256": "c884ac3b9be5066995d5063f96ad9af6e5e082975788c1684c4f6b6ea661dd0e",
+        "seconds": 0.005
+      },
+      "memo": {
+        "calls": 2,
+        "claims": 7,
+        "priority_area": "billing/support",
+        "seconds": 28.242,
+        "validation_errors": []
+      },
+      "rank": {
+        "completed_records": 100,
+        "issues_ranked": 19,
+        "memberships": 49,
+        "seconds": 0.01
+      },
+      "verify": {
+        "agreement": {
+          "intent": 0.9,
+          "severity": 0.9,
+          "topic": 0.9
+        },
+        "compared": 20,
+        "disagreements": 5,
+        "new_calls": 1,
+        "sample_declared": {
+          "fraction": 0.2,
+          "max": 5000,
+          "min": 20,
+          "population_distinct_texts": 100,
+          "sampled": 20,
+          "seed": "verify-sample-v1"
+        },
+        "seconds": 3.655,
+        "severity_mae": 0.1
+      }
+    },
+    "rows": 100,
+    "distinct_texts": 100,
+    "calls": {
+      "attempts": 9,
+      "cost_usd": 0.079157,
+      "failed": 0,
+      "input_tokens": 26759,
+      "output_tokens": 13013,
+      "succeeded": 9
+    }
+  },
+  "warm": {
+    "run_id": "pilot-warm-20261022T174720",
+    "wall_clock_s": 1.959,
+    "stages": {
+      "enrich": {
+        "batches": 0,
+        "completed": 0,
+        "elapsed_s": 0.0,
+        "failed_batches": 0,
+        "fallback_items": 0,
+        "items_sent": 0,
+        "quarantined": 0,
+        "remaining_pending": 0,
+        "retried_items": 0,
+        "seconds": 0.001,
+        "stopped_reason": null
+      },
+      "group": {
+        "calls": 0,
+        "issues": 19,
+        "seconds": 0.003
+      },
+      "ingest": {
+        "counts": {
+          "distinct_nonempty_texts": 100,
+          "duplicate_review_ids": 0,
+          "empty_review_text": 0,
+          "invalid_rating": 0,
+          "missing_app_version": 18,
+          "nonempty_to_classify": 100,
+          "records": 100,
+          "repeated_text_groups": 0,
+          "reuse_savings_rows": 0,
+          "reviews_with_repeated_text": 0,
+          "unique_review_ids": 100
+        },
+        "input_sha256": "c884ac3b9be5066995d5063f96ad9af6e5e082975788c1684c4f6b6ea661dd0e",
+        "seconds": 0.001
+      },
+      "memo": {
+        "calls": 0,
+        "claims": 7,
+        "priority_area": "billing/support",
+        "seconds": 0.004,
+        "validation_errors": []
+      },
+      "rank": {
+        "completed_records": 100,
+        "issues_ranked": 19,
+        "memberships": 49,
+        "seconds": 0.003
+      },
+      "verify": {
+        "agreement": {
+          "intent": 0.9,
+          "severity": 0.9,
+          "topic": 0.9
+        },
+        "compared": 20,
+        "disagreements": 5,
+        "new_calls": 0,
+        "sample_declared": {
+          "fraction": 0.2,
+          "max": 5000,
+          "min": 20,
+          "population_distinct_texts": 100,
+          "sampled": 20,
+          "seed": "verify-sample-v1"
+        },
+        "seconds": 0.002,
+        "severity_mae": 0.1
+      }
+    },
+    "rows": 100,
+    "distinct_texts": 100,
+    "calls": {
+      "attempts": 0,
+      "cost_usd": 0,
+      "failed": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "succeeded": 0
+    }
+  }
+}

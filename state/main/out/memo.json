@@ -1,0 +1,111 @@
+{
+  "config": "claude-sonnet-5-5+effort-low+adaptive+memo-v2",
+  "memo": {
+    "alternatives": [
+      {
+        "area": "usability",
+        "why_not_first": "Usability has the largest actionable area total (complaint_count 88824, severity_sum 201658) versus billing/support's 65875 and 182683. But it is spread across 11 issues, and its top issue (`usability.ads_frequency_volume`) is well below the top billing issue. Billing/support is concentrated in one issue."
+      },
+      {
+        "area": "playback",
+        "why_not_first": "Severe but lower volume; its top issue `playback.playback_interrupted` ranks fourth."
+      },
+      {
+        "area": "access",
+        "why_not_first": "Small area total (complaint_count 10477). Login failure is very severe but narrow."
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "issue_id": "billing.premium_only_controls",
+        "metric": "complaint_count",
+        "value": "52736"
+      },
+      {
+        "claim_id": "C2",
+        "issue_id": "billing.premium_only_controls",
+        "metric": "severity_sum",
+        "value": "149641"
+      },
+      {
+        "claim_id": "C3",
+        "issue_id": "billing.premium_only_controls",
+        "metric": "mean_severity",
+        "value": "2.837549"
+      },
+      {
+        "claim_id": "C4",
+        "issue_id": "billing.premium_only_controls",
+        "metric": "priority_score",
+        "value": "149641"
+      },
+      {
+        "claim_id": "C5",
+        "issue_id": "access.login_failure",
+        "metric": "mean_severity",
+        "value": "3.847327"
+      },
+      {
+        "claim_id": "C6",
+        "issue_id": "playback.playback_interrupted",
+        "metric": "mean_severity",
+        "value": "3.183657"
+      },
+      {
+        "claim_id": "C7",
+        "issue_id": "usability.ads_frequency_volume",
+        "metric": "complaint_count",
+        "value": "36829"
+      }
+    ],
+    "headline": "Put the next quarter into billing/support, starting with the free-tier features locked behind Premium (`billing.premium_only_controls`), the top-ranked issue, which is concentrated and actionable and is also the issue with the most expressed cancellation intent among the top issues.",
+    "limitations": [
+      "Reviews are self-selected public app-store reviews; cancellation language is expressed intent, not observed churn. No revenue or retention effect is claimed.",
+      "86 reviews were quarantined (73 invalid model output after retry, 13 empty text); none are pending.",
+      "The `none` area (generic criticism, update complaints; complaint_count 95528) is the largest total but is non-actionable, and `other.generic_criticism` ranks second for that reason.",
+      "`billing.premium_only_controls` is heavily concentrated in 2023-09 to 2023-11 (26233 of 67034 complaints in 2023-10), so the all-window total is inflated by a late surge. First and last months are partial.",
+      "Verification against a sample showed topic agreement of 0.843, so issue labels carry some noise."
+    ],
+    "memo_markdown": "# Decision memo: where to focus next quarter\n\n**Recommendation: billing/support, led by `billing.premium_only_controls`.**\n\n## Why this issue\n`billing.premium_only_controls` (free-tier features locked behind Premium) ranks first, with complaint_count 52736 [C1] and severity_sum 149641 [C2]. Its mean severity is 2.837549 [C3] and its priority_score is 149641 [C4]. Representative reviews include `f524e032-145f-4584-9d86-cab4b1c97a7e` (shuffle) and `9857dc61-331a-4e0d-b6d7-8e2445097170` (lyrics).\n\n## Reconciling the two views\nBy area total, usability is largest among actionable areas (complaint_count 88824, severity_sum 201658), ahead of billing/support (65875, 182683). The top-ranked issue, however, belongs to billing/support. Usability's total is spread over 11 issues, while billing/support's weight sits in one clear issue. Its top issue, `usability.ads_frequency_volume`, has complaint_count 36829 [C7], well below the top billing issue. We therefore prefer the concentrated, actionable issue. The `none` area (complaint_count 95528) is generic praise, criticism and unclear content, and is not actionable. That is why `other.generic_criticism` ranks second but is not recommended.\n\n## Persistence versus spike\nThe issue was present every month, but the all-window total is dominated by a late surge: 2023-10 had 26233 of 67034 complaints. Before that, monthly counts were far lower (for example 575 in 2023-04 of 8777). Treat it as a persistent baseline with a recent spike, so the team should check what changed in September to November 2023 before sizing the work. First and last months are partial.\n\n## Other priorities\n- `access.login_failure` has the highest mean severity at 3.847327 [C5], and `playback.playback_interrupted` has 3.183657 [C6], but both are much lower volume. Keep a small parallel fix going.\n- Ads (`usability.ads_frequency_volume`) are steady month to month. Keep them on the watchlist.\n\n## Caveats\nThese are self-selected app-store reviews. Cancellation language is expressed intent, not observed churn, and we make no revenue or retention claims. 86 reviews were quarantined (73 invalid model output, 13 empty text), and none are pending. Topic agreement in the verification sample was 0.843, so labels carry some noise.",
+    "priority_area": "billing/support",
+    "recommendations": [
+      {
+        "claim_ids": [
+          "C1",
+          "C2",
+          "C3",
+          "C4"
+        ],
+        "detail": "Review which controls (shuffle choice, skips, lyrics, seeking) free users see locked, and how the lock is communicated. Reviews `f524e032-145f-4584-9d86-cab4b1c97a7e` and `9857dc61-331a-4e0d-b6d7-8e2445097170` describe exactly this.",
+        "issue_ids": [
+          "billing.premium_only_controls"
+        ],
+        "title": "Review the Premium-only gating of core controls"
+      },
+      {
+        "claim_ids": [
+          "C5",
+          "C6"
+        ],
+        "detail": "These are the most severe issues, with the highest mean severity in the ranking, but much lower volume.",
+        "issue_ids": [
+          "access.login_failure",
+          "playback.playback_interrupted"
+        ],
+        "title": "Run a parallel, smaller fix on login failure and playback interruptions"
+      },
+      {
+        "claim_ids": [
+          "C7"
+        ],
+        "detail": "Ad complaints are persistent and steady, ranked third.",
+        "issue_ids": [
+          "usability.ads_frequency_volume"
+        ],
+        "title": "Keep ad frequency on the watchlist"
+      }
+    ]
+  },
+  "validation_errors": []
+}

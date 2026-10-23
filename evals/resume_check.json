@@ -1,0 +1,12 @@
+{
+  "completed_before": 134904,
+  "completed_after": 137856,
+  "new_after_resume": 2952,
+  "before_is_subset_of_after": true,
+  "resume_phase_enrich_calls": 28,
+  "completed_ids_resent_in_resume_calls": 0,
+  "interrupted_runs": [
+    "full-initial-sync"
+  ],
+  "passed": true
+}

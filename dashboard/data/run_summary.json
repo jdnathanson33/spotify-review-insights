@@ -1,0 +1,59 @@
+{
+  "args": {
+    "budget_usd": 40.0,
+    "cmd": "run",
+    "fallback_fraction": 0.0,
+    "input": "data/spotify_reviews_18months.csv",
+    "max_batches": null,
+    "mock": false,
+    "otpm": 70000,
+    "phase": "initial",
+    "requeue_quarantined": false,
+    "run_id": "full-memo-v2",
+    "stages": "group,rank,memo",
+    "state": "state/main",
+    "verify_fraction": 0.01,
+    "verify_max": 5000,
+    "verify_min": 20,
+    "workers": 1
+  },
+  "calls": {
+    "attempts": 2,
+    "cost_usd": 0.085946,
+    "failed": 0,
+    "input_tokens": 18799,
+    "output_tokens": 4618,
+    "succeeded": 2
+  },
+  "finished_at": "2026-10-22T18:48:16-0700",
+  "interrupted": false,
+  "label_config": "claude-haiku-5-5+effort-low+nothink+enrich-v2+schema-v1+entities-v1",
+  "ledger": {
+    "cap_usd": 40.0,
+    "reserved_usd": 0.0,
+    "spent_usd": 10.940544
+  },
+  "run_id": "full-memo-v2",
+  "stages": {
+    "group": {
+      "calls": 0,
+      "issues": 40,
+      "seconds": 29.339
+    },
+    "memo": {
+      "calls": 2,
+      "claims": 7,
+      "priority_area": "billing/support",
+      "seconds": 55.637,
+      "validation_errors": []
+    },
+    "rank": {
+      "completed_records": 660536,
+      "issues_ranked": 40,
+      "memberships": 303462,
+      "seconds": 32.073
+    }
+  },
+  "started_at": "2026-10-22T18:46:16-0700",
+  "wall_clock_s": 119.694
+}

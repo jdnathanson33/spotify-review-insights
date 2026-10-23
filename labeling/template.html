@@ -1,0 +1,112 @@
+<title>Golden 50 Labeling</title>
+<style>
+:root{--bg:#f7f6f3;--card:#fff;--ink:#1d1d1b;--muted:#6b6a65;--line:#e2e0da;--accent:#1f7a4d;--warn:#b54708;--chip:#eef3ef}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#161615;--card:#21211f;--ink:#ecebe6;--muted:#a3a29b;--line:#383733;--accent:#4fbf86;--warn:#f5a25d;--chip:#24312a}}
+:root[data-theme="dark"]{--bg:#161615;--card:#21211f;--ink:#ecebe6;--muted:#a3a29b;--line:#383733;--accent:#4fbf86;--warn:#f5a25d;--chip:#24312a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+header{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding:12px 16px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+h1{font-size:17px;margin:0;flex:1}
+.prog{font-variant-numeric:tabular-nums;color:var(--muted)}
+.bar{height:6px;width:160px;background:var(--line);border-radius:3px;overflow:hidden}.bar>i{display:block;height:100%;background:var(--accent);width:0}
+main{max-width:860px;margin:0 auto;padding:16px}
+details.defs{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin-bottom:16px}
+details.defs summary{cursor:pointer;font-weight:600}
+.defs table{border-collapse:collapse;width:100%;font-size:13.5px;margin:8px 0}
+.defs td{border-top:1px solid var(--line);padding:4px 6px;vertical-align:top}.defs td:first-child{font-weight:600;white-space:nowrap}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;margin-bottom:14px}
+.card.done{border-left:4px solid var(--accent)}
+.num{color:var(--muted);font-size:12.5px}
+.text{white-space:pre-wrap;font-size:16px;margin:6px 0 12px;padding:10px;background:var(--chip);border-radius:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+label{display:block;font-size:12.5px;color:var(--muted)}
+select,input,textarea{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:6px}
+textarea{min-height:52px;resize:vertical}
+.row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:10px}
+.row label{display:flex;gap:6px;align-items:center;color:var(--ink);font-size:14px}
+.row input[type=checkbox]{width:auto}
+.warn{color:var(--warn);font-size:12.5px;min-height:1em}
+button{font:inherit;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:6px;padding:4px 10px;cursor:pointer}
+.status{font-size:12.5px;color:var(--muted)}
+.full{grid-column:1/-1}
+</style>
+<header><h1>Golden 50 — hand labels</h1><div class="bar"><i id="bar"></i></div><span class="prog" id="prog">0 / 50</span><span class="status" id="conn">connecting…</span></header>
+<main>
+<details class="defs" open><summary>Shared definitions (from GRADING_CONTRACT.md)</summary>
+<table>
+<tr><td>access</td><td>Login, signup, password or account access</td></tr>
+<tr><td>usability</td><td>Navigation, controls, layout, queue/playlist management, ad interruptions</td></tr>
+<tr><td>playback</td><td>Playback failure, crashes, lag, connection failures, audio quality, resource use</td></tr>
+<tr><td>downloads</td><td>Downloading, saved music, offline listening, disappearing downloads</td></tr>
+<tr><td>catalog</td><td>Missing songs/artists, search/discovery, recommendations, lyrics availability</td></tr>
+<tr><td>billing</td><td>Price, charges, subscriptions, paywalls, premium entitlement; explicitly premium-only controls go here</td></tr>
+<tr><td>support</td><td>Contacting support and the support response</td></tr>
+<tr><td>other</td><td>General praise/criticism, unrelated content, or no supported specific topic</td></tr>
+</table>
+<p><b>Topic:</b> pick the problem with the highest severity; on a tie, the first one mentioned. For praise, use the first specific praised feature; general praise → <i>other</i>. A paid-plan mention alone ≠ billing.</p>
+<p><b>Intent precedence:</b> cancellation (explicitly leaving / uninstalling / cancelling / threatening to) → complaint (incl. mixed) → request → praise → unclear. Bare boycott slogans / meaningless text → unclear, unless a product complaint or personal departure is stated.</p>
+<table>
+<tr><td>1</td><td>No reported problem: praise, neutral/unclear, pure feature request</td></tr>
+<tr><td>2</td><td>Dislike, generic criticism, minor annoyance, cosmetic; no functional loss</td></tr>
+<tr><td>3</td><td>Degraded or restricted function; some use or workaround remains</td></tr>
+<tr><td>4</td><td>Clearly blocked core task (can't log in, can't play music)</td></tr>
+<tr><td>5</td><td>Explicit serious financial, privacy or data harm (a crash or angry words alone are not enough)</td></tr>
+</table>
+<p>Ignore the star rating — label the text. <b>Evidence quote</b> must be copied exactly from the review (“Use full text” fills it). Tick <b>ambiguous</b> if more than one label is defensible and note the alternative.</p>
+</details>
+<div id="list"></div>
+</main>
+<script>
+const ROWS = __ROWS__;
+const TOPICS=["","access","usability","playback","downloads","catalog","billing","support","other"];
+const INTENTS=["","cancellation","complaint","request","praise","unclear"];
+const state={}; let db=null; const timers={};
+const $=s=>document.querySelector(s);
+function isDone(v){return v&&v.topic&&v.intent&&v.severity&&v.sentiment!==""&&v.sentiment!=null&&v.evidence_quote}
+function progress(){const n=ROWS.filter(r=>isDone(state[r.id])).length;$("#prog").textContent=n+" / 50";$("#bar").style.width=(n*2)+"%";
+  ROWS.forEach(r=>{const c=document.getElementById("c-"+r.id);if(c)c.classList.toggle("done",!!isDone(state[r.id]))})}
+function opt(list,val){return list.map(x=>`<option value="${x}" ${x===val?"selected":""}>${x||"—"}</option>`).join("")}
+function render(){
+  $("#list").innerHTML=ROWS.map((r,i)=>{const v=state[r.id]||{};return `
+  <div class="card" id="c-${r.id}" data-id="${r.id}">
+    <div class="num">#${i+1} · ${r.id}</div>
+    <div class="text"></div>
+    <div class="grid">
+      <div><label>Topic</label><select data-f="topic">${opt(TOPICS,v.topic||"")}</select></div>
+      <div><label>Intent</label><select data-f="intent">${opt(INTENTS,v.intent||"")}</select></div>
+      <div><label>Severity</label><select data-f="severity">${opt(["","1","2","3","4","5"],v.severity?String(v.severity):"")}</select></div>
+      <div><label>Sentiment (−1 to 1)</label><input data-f="sentiment" type="number" min="-1" max="1" step="0.1" value="${v.sentiment??""}"></div>
+      <div class="full"><label>Evidence quote (exact substring) <button type="button" data-act="full">Use full text</button></label><textarea data-f="evidence_quote"></textarea><div class="warn" data-w></div></div>
+      <div><label>Entities (comma-separated, optional)</label><input data-f="entities" value=""></div>
+      <div><label>Note / alternative label</label><input data-f="note" value=""></div>
+    </div>
+    <div class="row"><label><input type="checkbox" data-f="needs_review" ${v.needs_review?"checked":""}> needs_review</label>
+    <label><input type="checkbox" data-f="ambiguous" ${v.ambiguous?"checked":""}> ambiguous</label></div>
+  </div>`}).join("");
+  ROWS.forEach(r=>{const c=document.getElementById("c-"+r.id),v=state[r.id]||{};
+    c.querySelector(".text").textContent=r.text;
+    c.querySelector('[data-f=evidence_quote]').value=v.evidence_quote||"";
+    c.querySelector('[data-f=entities]').value=(v.entities||[]).join(", ");
+    c.querySelector('[data-f=note]').value=v.note||"";check(c,r)});
+  progress();
+}
+function check(c,r){const q=c.querySelector('[data-f=evidence_quote]').value;c.querySelector("[data-w]").textContent=q&&!r.text.includes(q)?"Not an exact substring of the review — copy it exactly or use full text.":""}
+function read(c){const g=f=>c.querySelector(`[data-f=${f}]`);const s=g("sentiment").value;
+  return {topic:g("topic").value,intent:g("intent").value,severity:g("severity").value?Number(g("severity").value):null,
+  sentiment:s===""?null:Math.max(-1,Math.min(1,Number(s))),evidence_quote:g("evidence_quote").value,
+  entities:g("entities").value.split(",").map(x=>x.trim()).filter(Boolean),note:g("note").value,
+  needs_review:g("needs_review").checked,ambiguous:g("ambiguous").checked}}
+function onChange(e){const c=e.target.closest(".card");if(!c)return;const id=c.dataset.id,r=ROWS.find(x=>x.id===id);
+  if(e.target.dataset.act==="full"){c.querySelector('[data-f=evidence_quote]').value=r.text}
+  check(c,r);state[id]=read(c);progress();
+  clearTimeout(timers[id]);timers[id]=setTimeout(()=>save(id),600)}
+async function save(id){if(!db)return;try{await db.collection("labels").doc(id).set({...state[id],review_id:id,saved_at:new Date().toISOString()});$("#conn").textContent="saved ✓"}
+  catch(e){$("#conn").textContent="save failed: "+(e.code||e.message)}}
+document.addEventListener("input",onChange);document.addEventListener("change",onChange);
+document.addEventListener("click",e=>{if(e.target.dataset.act)onChange(e)});
+render();
+(async()=>{try{db=await window.claude.use("db")}catch(e){db=null}
+  if(!db){$("#conn").textContent="not saving (open in Claude to save)";return}
+  try{const snap=await db.collection("labels").limit(100).get();snap.docs.forEach(d=>{state[d.id]=d.data()});render();$("#conn").textContent="saving to database"}
+  catch(e){$("#conn").textContent="load failed: "+(e.code||e.message)}})();
+</script>
