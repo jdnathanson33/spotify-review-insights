@@ -22,14 +22,14 @@
 | Self-check (zero-API checker) | `working_coverage_point_candidate` **0.9999**. The only flag is `unfinished_classification` (the 73 quarantines above, shown on purpose). |
 | Model calls | 10,457 logged attempts (deduplicated) (enrich, verify, group and memo roles). 54.1M input and 34.4M output tokens. |
 | **API spend** | **$10.94** for the full run including dev checkpoints ([`cost/scaling.md`](cost/scaling.md)), plus **$0.13** for the two 100-review pilots and **<$0.01** for injection and smoke tests. The budget cap was $40, enforced in code. |
-| Full-run elapsed time | About 41 minutes from the start of full-corpus enrichment to the final memo (sync interrupt/resume demo, then the Message Batches API for the bulk, then deferred retries and downstream stages) |
+| Full-run elapsed time | About 45 minutes (18:02–18:48 PT) from the start of full-corpus enrichment to the final memo (sync interrupt/resume demo, then the Message Batches API for the bulk, then deferred retries and downstream stages) |
 | Golden 50 (see the disclosure below) | topic **82%**, intent **86%**, severity exact **88%**, severity MAE **0.16**, sentiment MAE 0.126, joint 70%. 16 of 50 cases are marked ambiguous. |
 | Independent verifier (seeded 1% sample, n=4,841) | topic **84.3%**, intent **91.0%**, severity **88.8%** agreement, severity MAE 0.115. 1,400 disagreement rows are saved. |
 | Planted-error test | **40 / 40** deliberately wrong labels detected by the verifier comparison |
 | Prompt-injection test | **7 / 7** checks passed (synthetic batch; injected text was labeled `unclear` and not obeyed) |
 | Interrupt/resume (full corpus, real calls) | 134,904 → 137,856 completed IDs. **0** completed IDs re-sent. Recording: [`evals/resume_demo.cast`](evals/resume_demo.cast) |
 
-> **Disclosure: golden labels.** At the student's request, the 50 golden reference labels in [`evals/golden_reference_labels.csv`](evals/golden_reference_labels.csv) were written by **Claude (the AI assistant that helped build this repo), not hand-labeled by the student.** Every row says so in a `labeler` column. They were written before any pipeline prediction on those 50 reviews existed and were never used as model inputs, examples, or thresholds. Because the labeler is itself an LLM, the agreement numbers above measure **agreement between two models**, not human-validated accuracy.
+> **Disclosure: golden labels.** At the student's request, the 50 golden reference labels in [`evals/golden_reference_labels.csv`](evals/golden_reference_labels.csv) were written by **Claude (the AI assistant that helped build this repo), not hand-labeled by the student.** Every row says so in a `labeler` column. They were written without viewing any pipeline prediction for those reviews. A few very short golden texts, such as "Good", already had cached predictions from identical dev-sample texts. The labels were never used as model inputs, examples, or thresholds. Because the labeler is itself an LLM, the agreement numbers above measure **agreement between two models**, not human-validated accuracy.
 
 ## Setup
 
